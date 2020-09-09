@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="venus"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/caleb/Github/venus/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/caleb/Github/venus/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/caleb/Github/venus/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="venus">
+				<Option output="/home/caleb/Github/venus/cmake-build-debug/libvenus.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/caleb/Github/venus/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/caleb/Github/venus/Graphics"/>
+					<Add directory="/usr/include/c++/10"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
+					<Add directory="/usr/include/c++/10/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 venus"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="venus/fast">
+				<Option output="/home/caleb/Github/venus/cmake-build-debug/libvenus.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/caleb/Github/venus/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/caleb/Github/venus/Graphics"/>
+					<Add directory="/usr/include/c++/10"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
+					<Add directory="/usr/include/c++/10/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 venus/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/caleb/Github/venus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/caleb/Github/venus/Graphics.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Camera.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Camera.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Circle.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Circle.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Cube.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Cube.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/GLCall.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/GLCall.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/IBuffer.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/IBuffer.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Mesh.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Mesh.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Model.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Model.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/NoCamera.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/NoCamera.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Orthographic3dCamera.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Orthographic3dCamera.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/OrthographicCamera.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/OrthographicCamera.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Perspective3dCamera.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Perspective3dCamera.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Rect.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Rect.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Renderer.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Renderer.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Shader.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Shader.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Sprite.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Sprite.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Tex2d.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Tex2d.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/VArray.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/VArray.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/VAttributes.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/VAttributes.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/VBuffer.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/VBuffer.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Window.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Window.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/gen_purpose_testing.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/mat4.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/mat4.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/sample_texture.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/simpleflips.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/vec2.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/vec2.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/vec3.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/vec4.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/vendor/stb_image/stb_image.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/vendor/stb_image/stb_image.h">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
