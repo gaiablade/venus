@@ -1,6 +1,11 @@
 #ifndef GLTEST_VEC3_HPP
 #define GLTEST_VEC3_HPP
 
+#define vec3f vec3<float>
+#define vec3d vec3<double>
+#define vec3i vec3<int>
+#define vec3u vec3<std::uint32_t>
+
 #include <cmath>
 #include <numbers>
 

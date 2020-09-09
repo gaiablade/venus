@@ -118,10 +118,6 @@ Circle.hpp
 GLCall.hpp
 /home/caleb/Github/venus/Graphics/GLCall.hpp
 
-/home/caleb/Github/venus/Graphics/Shader.cpp
-Shader.hpp
-/home/caleb/Github/venus/Graphics/Shader.hpp
-
 /home/caleb/Github/venus/Graphics/Shader.hpp
 iostream
 -
@@ -241,10 +237,6 @@ numbers
 /home/caleb/Github/venus/Graphics/vec4.hpp
 iostream
 -
-
-/home/caleb/Github/venus/vendor/stb_image/stb_image.cpp
-stb_image.h
-/home/caleb/Github/venus/vendor/stb_image/stb_image.h
 
 /home/caleb/Github/venus/vendor/stb_image/stb_image.h
 stb_image.h

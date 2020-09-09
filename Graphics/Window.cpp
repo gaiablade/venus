@@ -97,28 +97,4 @@ namespace ga {
         };
     }
 
-    template <>
-    void Window::Draw<Model>(const Model& object) {
-        mat4<float> u_MVP = object.getModelView() * this->camera.getProjection();
-        //u_MVP.print();
-        for (auto& mesh : object.meshes) {
-            for (auto& v : mesh.vertices) {
-                /*
-                auto mult = u_MVP * v.position;
-                std::cout << mult.x << ' ' << mult.y << ' ' << mult.z << '\n';
-                 */
-            }
-        }
-        this->shaders[s_CurrentShader].UniformMat4("u_MVP", u_MVP);
-        for (auto& mesh : object.meshes) {
-            this->renderer.Draw(mesh);
-        }
-    }
-
-    template <typename Drawable>
-    void Window::Draw(const Drawable& object) {
-        mat4<float> u_MVP = object.getModelView() * this->camera.getProjection();
-        this->shaders[s_CurrentShader].UniformMat4("u_MVP", u_MVP);
-        this->renderer.Draw(object);
-    }
 }
