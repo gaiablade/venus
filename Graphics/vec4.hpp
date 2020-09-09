@@ -1,11 +1,6 @@
 #pragma once
 #include <iostream>
 
-#define vec4f vec4<float>
-#define vec4d vec4<double>
-#define vec4i vec4<int>
-#define vec4u vec4<std::uint32_t>
-
 namespace ga {
     template <typename T>
     struct vec4 {
@@ -19,5 +14,9 @@ namespace ga {
             T data[4];
         };
     };
-}
 
+    typedef vec4<float> vec4f;
+    typedef vec4<double> vec4d;
+    typedef vec4<int> vec4i;
+    typedef vec4<std::uint32_t> vec4u;
+}

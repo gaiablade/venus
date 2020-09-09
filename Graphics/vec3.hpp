@@ -1,11 +1,6 @@
 #ifndef GLTEST_VEC3_HPP
 #define GLTEST_VEC3_HPP
 
-#define vec3f vec3<float>
-#define vec3d vec3<double>
-#define vec3i vec3<int>
-#define vec3u vec3<std::uint32_t>
-
 #include <cmath>
 #include <numbers>
 
@@ -31,6 +26,11 @@ namespace ga {
             vec.x * num::pi / 180.f, vec.y * num::pi / 180.f, vec.z * num::pi / 180.f
         };
     }
+
+    typedef vec3<float> vec3f;
+    typedef vec3<double> vec3d;
+    typedef vec3<int> vec3i;
+    typedef vec3<std::uint32_t> vec3u;
 }
 
 #endif //GLTEST_VEC3_HPP

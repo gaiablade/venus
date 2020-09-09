@@ -1,9 +1,5 @@
 #pragma once
-
-#define vec2f vec2<float>
-#define vec2d vec2<double>
-#define vec2i vec2<int>
-#define vec2u vec2<std::uint32_t>
+#include <iostream>
 
 namespace ga {
     template <typename T>
@@ -12,6 +8,9 @@ namespace ga {
         T x, y;
         explicit operator vec2<float>() const { return { this->x, this->y }; }
     };
+
+    typedef vec2<float> vec2f;
+    typedef vec2<double> vec2d;
+    typedef vec2<std::uint32_t> vec2u;
+    typedef vec2<int> vec2i;
 }
-
-
