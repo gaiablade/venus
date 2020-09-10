@@ -56,4 +56,4 @@ add_library(venus
         Graphics/Window.cpp
         Graphics/Window.hpp Graphics.hpp
         vendor/stb_image/stb_image.cpp
-        vendor/stb_image/stb_image.h)
+        vendor/stb_image/stb_image.h Graphics/Keycodes.hpp Game/Collider.cpp Game/Collider.hpp Graphics/mat2.cpp Graphics/mat2.hpp System/Functions.hpp Game.hpp System.hpp Graphics/ColorRect.cpp Graphics/ColorRect.hpp)

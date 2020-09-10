@@ -13,6 +13,7 @@
 #include "vec2.hpp"
 #include "GLCall.hpp"
 #include "vec4.hpp"
+#include "Keycodes.hpp"
 
 namespace ga {
     struct WinParams {
@@ -36,6 +37,8 @@ namespace ga {
         void setBillboarding(const bool&);
         void setWireframe(const bool&);
         void setClearColor(const vec4f& color);
+
+        const bool IsKeyPressed(const key& code) const;
 
         template <typename Drawable>
         void Draw(const Drawable& object);

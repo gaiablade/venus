@@ -31,7 +31,7 @@ namespace ga {
         // Get functions:
         vec2<float>& getDimensions();
 
-    private:
+    protected:
         // properties
         vec2<float> dimensions{};
 

@@ -143,6 +143,33 @@ venus/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/build
 .PHONY : venus/fast
 
+Game/Collider.o: Game/Collider.cpp.o
+
+.PHONY : Game/Collider.o
+
+# target to build an object file
+Game/Collider.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/Game/Collider.cpp.o
+.PHONY : Game/Collider.cpp.o
+
+Game/Collider.i: Game/Collider.cpp.i
+
+.PHONY : Game/Collider.i
+
+# target to preprocess a source file
+Game/Collider.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/Game/Collider.cpp.i
+.PHONY : Game/Collider.cpp.i
+
+Game/Collider.s: Game/Collider.cpp.s
+
+.PHONY : Game/Collider.s
+
+# target to generate assembly for a file
+Game/Collider.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/Game/Collider.cpp.s
+.PHONY : Game/Collider.cpp.s
+
 Graphics/Camera.o: Graphics/Camera.cpp.o
 
 .PHONY : Graphics/Camera.o
@@ -196,6 +223,33 @@ Graphics/Circle.s: Graphics/Circle.cpp.s
 Graphics/Circle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/Graphics/Circle.cpp.s
 .PHONY : Graphics/Circle.cpp.s
+
+Graphics/ColorRect.o: Graphics/ColorRect.cpp.o
+
+.PHONY : Graphics/ColorRect.o
+
+# target to build an object file
+Graphics/ColorRect.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o
+.PHONY : Graphics/ColorRect.cpp.o
+
+Graphics/ColorRect.i: Graphics/ColorRect.cpp.i
+
+.PHONY : Graphics/ColorRect.i
+
+# target to preprocess a source file
+Graphics/ColorRect.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/Graphics/ColorRect.cpp.i
+.PHONY : Graphics/ColorRect.cpp.i
+
+Graphics/ColorRect.s: Graphics/ColorRect.cpp.s
+
+.PHONY : Graphics/ColorRect.s
+
+# target to generate assembly for a file
+Graphics/ColorRect.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/Graphics/ColorRect.cpp.s
+.PHONY : Graphics/ColorRect.cpp.s
 
 Graphics/Cube.o: Graphics/Cube.cpp.o
 
@@ -710,6 +764,33 @@ Graphics/gen_purpose_testing.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/Graphics/gen_purpose_testing.cpp.s
 .PHONY : Graphics/gen_purpose_testing.cpp.s
 
+Graphics/mat2.o: Graphics/mat2.cpp.o
+
+.PHONY : Graphics/mat2.o
+
+# target to build an object file
+Graphics/mat2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/Graphics/mat2.cpp.o
+.PHONY : Graphics/mat2.cpp.o
+
+Graphics/mat2.i: Graphics/mat2.cpp.i
+
+.PHONY : Graphics/mat2.i
+
+# target to preprocess a source file
+Graphics/mat2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/Graphics/mat2.cpp.i
+.PHONY : Graphics/mat2.cpp.i
+
+Graphics/mat2.s: Graphics/mat2.cpp.s
+
+.PHONY : Graphics/mat2.s
+
+# target to generate assembly for a file
+Graphics/mat2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/Graphics/mat2.cpp.s
+.PHONY : Graphics/mat2.cpp.s
+
 Graphics/mat4.o: Graphics/mat4.cpp.o
 
 .PHONY : Graphics/mat4.o
@@ -800,12 +881,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... venus"
+	@echo "... Game/Collider.o"
+	@echo "... Game/Collider.i"
+	@echo "... Game/Collider.s"
 	@echo "... Graphics/Camera.o"
 	@echo "... Graphics/Camera.i"
 	@echo "... Graphics/Camera.s"
 	@echo "... Graphics/Circle.o"
 	@echo "... Graphics/Circle.i"
 	@echo "... Graphics/Circle.s"
+	@echo "... Graphics/ColorRect.o"
+	@echo "... Graphics/ColorRect.i"
+	@echo "... Graphics/ColorRect.s"
 	@echo "... Graphics/Cube.o"
 	@echo "... Graphics/Cube.i"
 	@echo "... Graphics/Cube.s"
@@ -863,6 +950,9 @@ help:
 	@echo "... Graphics/gen_purpose_testing.o"
 	@echo "... Graphics/gen_purpose_testing.i"
 	@echo "... Graphics/gen_purpose_testing.s"
+	@echo "... Graphics/mat2.o"
+	@echo "... Graphics/mat2.i"
+	@echo "... Graphics/mat2.s"
 	@echo "... Graphics/mat4.o"
 	@echo "... Graphics/mat4.i"
 	@echo "... Graphics/mat4.s"

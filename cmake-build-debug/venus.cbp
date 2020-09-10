@@ -86,6 +86,15 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/caleb/Github/venus/Game.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Game/Collider.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Game/Collider.hpp">
+			<Option target="venus"/>
+		</Unit>
 		<Unit filename="/home/caleb/Github/venus/Graphics.hpp">
 			<Option target="venus"/>
 		</Unit>
@@ -99,6 +108,12 @@
 			<Option target="venus"/>
 		</Unit>
 		<Unit filename="/home/caleb/Github/venus/Graphics/Circle.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/ColorRect.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/ColorRect.hpp">
 			<Option target="venus"/>
 		</Unit>
 		<Unit filename="/home/caleb/Github/venus/Graphics/Cube.cpp">
@@ -117,6 +132,9 @@
 			<Option target="venus"/>
 		</Unit>
 		<Unit filename="/home/caleb/Github/venus/Graphics/IBuffer.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/Keycodes.hpp">
 			<Option target="venus"/>
 		</Unit>
 		<Unit filename="/home/caleb/Github/venus/Graphics/Mesh.cpp">
@@ -212,6 +230,12 @@
 		<Unit filename="/home/caleb/Github/venus/Graphics/gen_purpose_testing.cpp">
 			<Option target="venus"/>
 		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/mat2.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/mat2.hpp">
+			<Option target="venus"/>
+		</Unit>
 		<Unit filename="/home/caleb/Github/venus/Graphics/mat4.cpp">
 			<Option target="venus"/>
 		</Unit>
@@ -234,6 +258,12 @@
 			<Option target="venus"/>
 		</Unit>
 		<Unit filename="/home/caleb/Github/venus/Graphics/vec4.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/System.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/System/Functions.hpp">
 			<Option target="venus"/>
 		</Unit>
 		<Unit filename="/home/caleb/Github/venus/vendor/stb_image/stb_image.cpp">

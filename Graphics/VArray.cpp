@@ -5,6 +5,10 @@ namespace ga {
         GLCall(glGenVertexArrays(1, &this->n_VArrayID));
     }
 
+    VArray::VArray(VArray&& other) : n_VArrayID(other.n_VArrayID) {
+        other.n_VArrayID = 0;
+    }
+
     void VArray::addBuffer(VBuffer &buffer, VAttributes &attributes) {
         this->Bind();
         buffer.Bind();

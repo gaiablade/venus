@@ -14,6 +14,8 @@ namespace ga {
     public:
         Sprite(Tex2d& texture);
 
+        Sprite(Sprite&& other);
+
         void Bind() const;
 
         IBuffer &getIBuffer();

@@ -83,6 +83,11 @@ namespace ga {
         GLCall(glClearColor(color.r, color.g, color.b, color.a));
     }
 
+    const bool Window::IsKeyPressed(const key& code) const {
+        auto status = glfwGetKey(this->w, (int) code);
+        return status == GLFW_PRESS || status == GLFW_REPEAT;
+    }
+
     GLFWwindow*& Window::getGLFWWindow() {
         return this->w;
     }

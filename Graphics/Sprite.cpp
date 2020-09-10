@@ -19,6 +19,9 @@ namespace ga {
         this->texture = &texture;
     }
 
+    Sprite::Sprite(Sprite&& other) {
+    }
+
     void Sprite::Bind() const {
         this->varray.Bind();
         this->ibuffer.Bind();

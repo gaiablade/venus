@@ -35,6 +35,12 @@ namespace ga {
     }
      */
 
+    /*
+    Tex2d::Tex2d(Tex2d &&other) : n_TexID(other.n_TexID) {
+        other.n_TexID = 0;
+    }
+     */
+
     void Tex2d::Bind(const int& slot) const {
         glActiveTexture(GL_TEXTURE0 + slot);
         glBindTexture(GL_TEXTURE_2D, this->n_TexID);

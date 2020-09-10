@@ -6,6 +6,7 @@ namespace ga {
     class VArray {
     public:
         VArray();
+        VArray(VArray&& other);
         void addBuffer(VBuffer& buffer, VAttributes& attributes);
         void Bind() const;
         static void Unbind() ;

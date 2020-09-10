@@ -25,6 +25,9 @@ namespace ga {
         // Generic constructor for use with image files
         Tex2d(const std::string& filename);
 
+        // Move constructor:
+        //Tex2d(Tex2d&& other);
+
         void Bind(const int& slot = 0) const;
 
         int getWidth() const;

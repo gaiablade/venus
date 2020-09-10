@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/venus.dir/Game/Collider.cpp.o"
   "CMakeFiles/venus.dir/Graphics/Camera.cpp.o"
   "CMakeFiles/venus.dir/Graphics/Circle.cpp.o"
+  "CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o"
   "CMakeFiles/venus.dir/Graphics/Cube.cpp.o"
   "CMakeFiles/venus.dir/Graphics/GLCall.cpp.o"
   "CMakeFiles/venus.dir/Graphics/IBuffer.cpp.o"
@@ -20,6 +22,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/venus.dir/Graphics/VBuffer.cpp.o"
   "CMakeFiles/venus.dir/Graphics/Window.cpp.o"
   "CMakeFiles/venus.dir/Graphics/gen_purpose_testing.cpp.o"
+  "CMakeFiles/venus.dir/Graphics/mat2.cpp.o"
   "CMakeFiles/venus.dir/Graphics/mat4.cpp.o"
   "CMakeFiles/venus.dir/Graphics/vec2.cpp.o"
   "CMakeFiles/venus.dir/vendor/stb_image/stb_image.cpp.o"
