@@ -49,4 +49,3 @@ namespace ga {
         VArray varray;
     };
 }
-

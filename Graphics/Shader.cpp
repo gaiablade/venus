@@ -69,7 +69,7 @@ namespace ga {
         glUseProgram(this->n_ShaderProgramID);
     }
 
-    void Shader::UniformMat4(const std::string &name, const mat4<float> &matrix) const {
+    void Shader::UniformMat4(const std::string &name, const mat4f &matrix) const {
         int location = glGetUniformLocation(this->n_ShaderProgramID, name.c_str());
         GLCall(glUniformMatrix4fv(location, 1, GL_FALSE, reinterpret_cast<const float *>(&matrix.data)));
     }
@@ -77,5 +77,10 @@ namespace ga {
     void Shader::UniformMat4_glm(const std::string &name, const glm::mat4 &matrix) const {
         int location = glGetUniformLocation(this->n_ShaderProgramID, name.c_str());
         GLCall(glUniformMatrix4fv(location, 1, GL_FALSE, reinterpret_cast<const float *>(&matrix[0][0])));
+    }
+
+    void Shader::UniformVec4f(const std::string& name, const vec4f &vector) const {
+        int location = glGetUniformLocation(this->n_ShaderProgramID, name.c_str());
+        GLCall(glUniform4fv(location, 1, &vector.x));
     }
 }

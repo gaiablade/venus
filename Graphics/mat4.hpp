@@ -318,5 +318,10 @@ namespace ga {
         }
         return retMat;
     }
+
+    typedef mat4<float> mat4f;
+    typedef mat4<double> mat4d;
+    typedef mat4<int> mat4i;
+    typedef mat4<std::uint32_t> mat4u;
 }
 

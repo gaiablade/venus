@@ -27,6 +27,15 @@ CMakeFiles/venus.dir/Graphics/Circle.cpp.o: ../Graphics/vec3.hpp
 
 CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o: ../Graphics/ColorRect.cpp
 CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o: ../Graphics/ColorRect.hpp
+CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o: ../Graphics/GLCall.hpp
+CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o: ../Graphics/IBuffer.hpp
+CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o: ../Graphics/VArray.hpp
+CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o: ../Graphics/VAttributes.hpp
+CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o: ../Graphics/VBuffer.hpp
+CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o: ../Graphics/mat4.hpp
+CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o: ../Graphics/vec2.hpp
+CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o: ../Graphics/vec3.hpp
+CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o: ../Graphics/vec4.hpp
 
 CMakeFiles/venus.dir/Graphics/Cube.cpp.o: ../Graphics/Cube.cpp
 CMakeFiles/venus.dir/Graphics/Cube.cpp.o: ../Graphics/Cube.hpp
@@ -130,6 +139,7 @@ CMakeFiles/venus.dir/Graphics/Shader.cpp.o: ../Graphics/Shader.hpp
 CMakeFiles/venus.dir/Graphics/Shader.cpp.o: ../Graphics/mat4.hpp
 CMakeFiles/venus.dir/Graphics/Shader.cpp.o: ../Graphics/vec2.hpp
 CMakeFiles/venus.dir/Graphics/Shader.cpp.o: ../Graphics/vec3.hpp
+CMakeFiles/venus.dir/Graphics/Shader.cpp.o: ../Graphics/vec4.hpp
 
 CMakeFiles/venus.dir/Graphics/Sprite.cpp.o: ../Graphics/GLCall.hpp
 CMakeFiles/venus.dir/Graphics/Sprite.cpp.o: ../Graphics/IBuffer.hpp

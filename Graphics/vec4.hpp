@@ -13,6 +13,8 @@ namespace ga {
             };
             T data[4];
         };
+
+        ~vec4() = default;
     };
 
     typedef vec4<float> vec4f;

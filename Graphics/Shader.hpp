@@ -5,6 +5,7 @@
 #include <GL/glew.h>
 #include "GLCall.hpp"
 #include "mat4.hpp"
+#include "vec4.hpp"
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 
@@ -20,9 +21,11 @@ namespace ga {
 
         void Use() const;
 
-        void UniformMat4(const std::string &name, const mat4<float> &matrix) const;
+        void UniformMat4(const std::string &name, const mat4f &matrix) const;
 
         void UniformMat4_glm(const std::string &name, const glm::mat4 &matrix) const;
+
+        void UniformVec4f(const std::string& name, const vec4f& vector) const;
 
     private:
         std::string s_VertexShaderSource, s_FragmentShaderSource;

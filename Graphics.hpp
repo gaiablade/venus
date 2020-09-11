@@ -2,6 +2,7 @@
 
 #include "Graphics/Camera.hpp"
 #include "Graphics/Circle.hpp"
+#include "Graphics/ColorRect.hpp"
 #include "Graphics/Cube.hpp"
 #include "Graphics/GLCall.hpp"
 #include "Graphics/IBuffer.hpp"
