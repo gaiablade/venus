@@ -1,6 +1,6 @@
 #include "ColorRect.hpp"
 
-namespace ga {
+namespace vn {
     ColorRect::ColorRect(const vec4f &color, const vec2f& dimensions) :
             indices({0, 2, 3, 0, 3, 1}),
             buffer({
@@ -18,7 +18,11 @@ namespace ga {
         this->varray.addBuffer(vbuffer, attributes);
     }
 
-    ColorRect::ColorRect(ColorRect &&other) {
+    ColorRect::ColorRect(ColorRect &&other) noexcept :
+        color(other.color), indices(other.indices), buffer(other.buffer), ibuffer(std::move(other.ibuffer)),
+        vbuffer(std::move(other.vbuffer)), dimensions(other.dimensions), position(other.position),
+        varray(std::move(other.varray))
+    {
     }
 
     void ColorRect::Bind() const {

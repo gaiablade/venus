@@ -6,7 +6,7 @@
 /**
  * Base Camera Class
  */
-namespace ga {
+namespace vn {
     class Camera {
     public:
         mat4<float> &getProjection();

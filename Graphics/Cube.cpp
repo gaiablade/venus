@@ -1,6 +1,6 @@
 #include "Cube.hpp"
 
-namespace ga {
+namespace vn {
     Cube::Cube(float size)
         : vertices({
             -size, -size,  size,

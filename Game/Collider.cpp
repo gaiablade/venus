@@ -1,13 +1,13 @@
 #include "Collider.hpp"
 
-namespace ga {
+namespace vn {
     Collider::Collider(const vec2f& dimensions)
             : dimensions(dimensions), scaled_dimensions(dimensions), position({ 0.0f, 0.0f }), rotation(0.f)
     {
-        this->points[0] = ga::vec2f{ this->position.x - dimensions.x / 2, this->position.y - dimensions.y / 2 }; // top left
-        this->points[1] = ga::vec2f{ this->position.x + dimensions.x / 2, this->position.y - dimensions.y / 2 }; // top right
-        this->points[2] = ga::vec2f{ this->position.x + dimensions.x / 2, this->position.y + dimensions.y / 2 }; // bottom right
-        this->points[3] = ga::vec2f{ this->position.x - dimensions.x / 2, this->position.y + dimensions.y / 2 }; // bottom left
+        this->points[0] = vec2f{ this->position.x - dimensions.x / 2, this->position.y - dimensions.y / 2 }; // top left
+        this->points[1] = vec2f{ this->position.x + dimensions.x / 2, this->position.y - dimensions.y / 2 }; // top right
+        this->points[2] = vec2f{ this->position.x + dimensions.x / 2, this->position.y + dimensions.y / 2 }; // bottom right
+        this->points[3] = vec2f{ this->position.x - dimensions.x / 2, this->position.y + dimensions.y / 2 }; // bottom left
         calculatePoints();
         this->setRotation(this->rotation);
     }
@@ -52,9 +52,9 @@ namespace ga {
         // SAT-Theorem
         // Step 1: Get all normal angles
         /*
-        ga::Angle normal_angles[4] = {
-                ga::Angle(other.rotation.angle), ga::Angle(90.0f + other.rotation.angle),
-                ga::Angle(this->rotation.angle), ga::Angle(90.0f + this->rotation.angle)
+        Angle normal_angles[4] = {
+                Angle(other.rotation.angle), Angle(90.0f + other.rotation.angle),
+                Angle(this->rotation.angle), Angle(90.0f + this->rotation.angle)
         };
          */
         std::array<float, 4> normal_angles = {
@@ -64,8 +64,8 @@ namespace ga {
 
         // Step 2: Project the vectors onto the angles and determine min and max points
         for (int i = 0; i < 4; i++) {
-            ga::mat2f mat = ga::mat2f::rotation(normal_angles[i]);
-            ga::vec2f r_points[4] = {
+            mat2f mat = mat2f::rotation(normal_angles[i]);
+            vec2f r_points[4] = {
                     /*
                     mat.multiply(points[0]), mat.multiply(points[1]),
                     mat.multiply(points[2]), mat.multiply(points[3])
@@ -73,7 +73,7 @@ namespace ga {
                     mat * points[0], mat * points[1],
                     mat * points[2], mat * points[3]
             };
-            ga::vec2f o_points[4] = {
+            vec2f o_points[4] = {
                     /*
                     mat.multiply(other.points[0]), mat.multiply(other.points[1]),
                     mat.multiply(other.points[2]), mat.multiply(other.points[3])
@@ -105,20 +105,20 @@ namespace ga {
     }
 
     void Collider::calculatePoints() {
-        //ga::mat2f rotationMatrix(-this->rotation);
-        ga::mat2f rotationMatrix = ga::mat2f::rotation(-this->rotation);
-        ga::vec2f corners[4];
+        //mat2f rotationMatrix(-this->rotation);
+        mat2f rotationMatrix = mat2f::rotation(-this->rotation);
+        vec2f corners[4];
         // Rotate around center of box:
         /*
-        corners[0] = rotationMatrix.multiply(ga::vec2f(0.0f - this->scaledWidth / 2, 0.0f - this->scaledHeight / 2));
-        corners[1] = rotationMatrix.multiply(ga::vec2f(0.0f + this->scaledWidth / 2, 0.0f - this->scaledHeight / 2));
-        corners[2] = rotationMatrix.multiply(ga::vec2f(0.0f + this->scaledWidth / 2, 0.0f + this->scaledHeight / 2));
-        corners[3] = rotationMatrix.multiply(ga::vec2f(0.0f - this->scaledWidth / 2, 0.0f + this->scaledHeight / 2));
+        corners[0] = rotationMatrix.multiply(vec2f(0.0f - this->scaledWidth / 2, 0.0f - this->scaledHeight / 2));
+        corners[1] = rotationMatrix.multiply(vec2f(0.0f + this->scaledWidth / 2, 0.0f - this->scaledHeight / 2));
+        corners[2] = rotationMatrix.multiply(vec2f(0.0f + this->scaledWidth / 2, 0.0f + this->scaledHeight / 2));
+        corners[3] = rotationMatrix.multiply(vec2f(0.0f - this->scaledWidth / 2, 0.0f + this->scaledHeight / 2));
          */
-        corners[0] = rotationMatrix * ga::vec2f{ 0.f - scaled_dimensions.x / 2, 0.f - scaled_dimensions.y / 2 };
-        corners[1] = rotationMatrix * ga::vec2f{ 0.f + scaled_dimensions.x / 2, 0.f - scaled_dimensions.y / 2 };
-        corners[2] = rotationMatrix * ga::vec2f{ 0.f+  scaled_dimensions.x / 2, 0.f + scaled_dimensions.y / 2 };
-        corners[3] = rotationMatrix * ga::vec2f{ 0.f - scaled_dimensions.x / 2, 0.f + scaled_dimensions.y / 2 };
+        corners[0] = rotationMatrix * vec2f{ 0.f - scaled_dimensions.x / 2, 0.f - scaled_dimensions.y / 2 };
+        corners[1] = rotationMatrix * vec2f{ 0.f + scaled_dimensions.x / 2, 0.f - scaled_dimensions.y / 2 };
+        corners[2] = rotationMatrix * vec2f{ 0.f+  scaled_dimensions.x / 2, 0.f + scaled_dimensions.y / 2 };
+        corners[3] = rotationMatrix * vec2f{ 0.f - scaled_dimensions.x / 2, 0.f + scaled_dimensions.y / 2 };
         // Set position according to position of box:
         for (int i = 0; i < 4; i++) {
             corners[i].x += this->position.x; corners[i].y += this->position.y;

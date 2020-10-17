@@ -8,7 +8,7 @@
 #include "vec2.hpp"
 #include "mat4.hpp"
 
-namespace ga {
+namespace vn {
     class Rect {
     public:
         Rect(const vec2<float> &dimensions);

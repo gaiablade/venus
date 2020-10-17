@@ -8,7 +8,7 @@
 #include "vec2.hpp"
 #include "mat4.hpp"
 
-namespace ga {
+namespace vn {
     const int numPoints = 1000;
 
     class Circle {

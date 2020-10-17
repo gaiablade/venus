@@ -7,7 +7,7 @@
 
 namespace num = std::numbers;
 
-namespace ga {
+namespace vn {
     class Collider {
     public:
         Collider() =delete;
@@ -15,9 +15,9 @@ namespace ga {
         bool isColliding(const Collider& other);
         void calculatePoints();
 
-        void setPosition(const ga::vec2f& pos);
+        void setPosition(const vec2f& pos);
         void setRotation(const float& rotation);
-        void setScale(const ga::vec2f& scale);
+        void setScale(const vec2f& scale);
 
         vec2f dimensions;
         vec2f scaled_dimensions;

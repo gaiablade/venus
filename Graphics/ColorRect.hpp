@@ -9,12 +9,12 @@
 #include "mat4.hpp"
 #include "vec4.hpp"
 
-namespace ga {
+namespace vn {
     class ColorRect {
     public:
         ColorRect(const vec4f& color, const vec2f& dimensions);
 
-        ColorRect(ColorRect&& other);
+        ColorRect(ColorRect&& other) noexcept ;
 
         void Bind() const;
 
@@ -35,6 +35,10 @@ namespace ga {
         vec2f& getDimensions();
 
         vec2f getPosition() const;
+
+        // Debugging:
+        VBuffer& DBG_GET_VBUFFER() { return this->vbuffer; }
+        VArray& DBG_GET_VARRAY() { return this->varray; }
 
     private:
         // properties

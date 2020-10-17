@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-namespace ga {
+namespace vn {
     template <typename T>
     struct vec4 {
         union {

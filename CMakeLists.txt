@@ -55,5 +55,9 @@ add_library(venus
         Graphics/vec4.hpp
         Graphics/Window.cpp
         Graphics/Window.hpp Graphics.hpp
+        Graphics/AbstractShape.cpp
+        Graphics/AbstractShape.hpp
+        Graphics/ConvexShape.cpp
+        Graphics/ConvexShape.hpp
         vendor/stb_image/stb_image.cpp
         vendor/stb_image/stb_image.h Graphics/Keycodes.hpp Game/Collider.cpp Game/Collider.hpp Graphics/mat2.cpp Graphics/mat2.hpp System/Functions.hpp Game.hpp System.hpp Graphics/ColorRect.cpp Graphics/ColorRect.hpp)

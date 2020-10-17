@@ -1,6 +1,6 @@
 #include "Tex2d.hpp"
 
-namespace ga {
+namespace vn {
     Tex2d::Tex2d(const std::string &filename) {
         std::filesystem::path filepath(filename);
         if (!std::filesystem::exists(filepath)) {

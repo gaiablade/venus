@@ -1,6 +1,6 @@
 #include "Sprite.hpp"
 
-namespace ga {
+namespace vn {
     Sprite::Sprite(Tex2d& texture) :
             indices({0, 2, 3, 0, 3, 1}),
             buffer({

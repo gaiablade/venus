@@ -8,6 +8,17 @@ CMakeFiles/venus.dir/Game/Collider.cpp.o: ../Graphics/vec2.hpp
 CMakeFiles/venus.dir/Game/Collider.cpp.o: ../Graphics/vec3.hpp
 CMakeFiles/venus.dir/Game/Collider.cpp.o: ../System/Functions.hpp
 
+CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o: ../Graphics/AbstractShape.cpp
+CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o: ../Graphics/AbstractShape.hpp
+CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o: ../Graphics/GLCall.hpp
+CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o: ../Graphics/IBuffer.hpp
+CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o: ../Graphics/VArray.hpp
+CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o: ../Graphics/VAttributes.hpp
+CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o: ../Graphics/VBuffer.hpp
+CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o: ../Graphics/mat4.hpp
+CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o: ../Graphics/vec2.hpp
+CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o: ../Graphics/vec3.hpp
+
 CMakeFiles/venus.dir/Graphics/Camera.cpp.o: ../Graphics/Camera.cpp
 CMakeFiles/venus.dir/Graphics/Camera.cpp.o: ../Graphics/Camera.hpp
 CMakeFiles/venus.dir/Graphics/Camera.cpp.o: ../Graphics/mat4.hpp
@@ -36,6 +47,17 @@ CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o: ../Graphics/mat4.hpp
 CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o: ../Graphics/vec2.hpp
 CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o: ../Graphics/vec3.hpp
 CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o: ../Graphics/vec4.hpp
+
+CMakeFiles/venus.dir/Graphics/ConvexShape.cpp.o: ../Graphics/ConvexShape.cpp
+CMakeFiles/venus.dir/Graphics/ConvexShape.cpp.o: ../Graphics/ConvexShape.hpp
+CMakeFiles/venus.dir/Graphics/ConvexShape.cpp.o: ../Graphics/GLCall.hpp
+CMakeFiles/venus.dir/Graphics/ConvexShape.cpp.o: ../Graphics/IBuffer.hpp
+CMakeFiles/venus.dir/Graphics/ConvexShape.cpp.o: ../Graphics/VArray.hpp
+CMakeFiles/venus.dir/Graphics/ConvexShape.cpp.o: ../Graphics/VAttributes.hpp
+CMakeFiles/venus.dir/Graphics/ConvexShape.cpp.o: ../Graphics/VBuffer.hpp
+CMakeFiles/venus.dir/Graphics/ConvexShape.cpp.o: ../Graphics/mat4.hpp
+CMakeFiles/venus.dir/Graphics/ConvexShape.cpp.o: ../Graphics/vec2.hpp
+CMakeFiles/venus.dir/Graphics/ConvexShape.cpp.o: ../Graphics/vec3.hpp
 
 CMakeFiles/venus.dir/Graphics/Cube.cpp.o: ../Graphics/Cube.cpp
 CMakeFiles/venus.dir/Graphics/Cube.cpp.o: ../Graphics/Cube.hpp

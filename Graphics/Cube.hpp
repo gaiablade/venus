@@ -8,7 +8,7 @@
 #include "vec3.hpp"
 #include "mat4.hpp"
 
-namespace ga {
+namespace vn {
     class Cube {
     public:
         Cube(float size);

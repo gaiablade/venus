@@ -1,6 +1,6 @@
 #pragma once
 
-namespace ga {
+    namespace vn {
     enum class key {
         SPACE = 32,
         APOSTROPHE = 39  /* ' */,

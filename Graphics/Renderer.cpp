@@ -1,6 +1,6 @@
 #include "Renderer.hpp"
 
-namespace ga {
+namespace vn {
     template<>
     void Renderer::Draw<Circle>(const Circle &object) {
         object.Bind();

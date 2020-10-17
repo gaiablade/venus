@@ -1,6 +1,6 @@
 #include "Camera.hpp"
 
-namespace ga {
+namespace vn {
     mat4<float> &Camera::getProjection() {
         return this->projection_matrix;
     }

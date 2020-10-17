@@ -9,7 +9,7 @@
 
 namespace num = std::numbers;
 
-namespace ga {
+namespace vn {
     template <typename T>
     class mat2 {
     public:

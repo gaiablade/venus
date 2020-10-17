@@ -2,7 +2,7 @@
 
 #include <utility>
 
-namespace ga {
+namespace vn {
     Mesh::Mesh(std::vector<Vertex> vertices, std::vector<std::uint32_t> indices, std::vector<Tex2d> textures) :
         vertices(std::move(vertices)), indices(std::move(indices)), textures(std::move(textures)),
         vbuffer((const void*)this->vertices.data(), this->vertices.size() * sizeof(Vertex)),

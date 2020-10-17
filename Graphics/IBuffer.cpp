@@ -1,13 +1,13 @@
 #include "IBuffer.hpp"
 
-namespace ga {
+namespace vn {
     IBuffer::IBuffer(const void *data, const uint32_t &size_Bytes, uint32_t usage) {
         GLCall(glGenBuffers(1, &this->n_BufferID));
         this->Bind();
         GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, size_Bytes, data, usage));
     }
 
-    IBuffer::IBuffer(IBuffer &&source) // Move constructor
+    IBuffer::IBuffer(IBuffer &&source) noexcept // Move constructor
         : n_BufferID(source.n_BufferID)
     {
         source.n_BufferID = 0;

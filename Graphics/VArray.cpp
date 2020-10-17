@@ -1,6 +1,6 @@
 #include "VArray.hpp"
 
-namespace ga {
+namespace vn {
     VArray::VArray() {
         GLCall(glGenVertexArrays(1, &this->n_VArrayID));
     }

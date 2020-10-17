@@ -1,7 +1,7 @@
 #include "Circle.hpp"
 #include <cmath>
 
-namespace ga {
+namespace vn {
     std::array<float, (numPoints + 1) * 5> createCircleBuffer(const float &radius) {
         std::array<float, (numPoints + 1) * 5> retArr{};
         float radians_gap = 360.f / numPoints * M_PI / 180.f;

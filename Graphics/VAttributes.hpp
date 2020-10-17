@@ -4,7 +4,7 @@
 #include <GL/glew.h>
 #include "GLCall.hpp"
 
-namespace ga {
+namespace vn {
         struct VAttribute {
             uint32_t type;
             int count;
@@ -19,6 +19,8 @@ namespace ga {
             template <typename T>
             void Insert(const int32_t& count);
             void Build();
+
+            std::vector<VAttribute>& getAttributes();
             private:
             std::vector<VAttribute> v_Attributes;
             int32_t n_Stride{};

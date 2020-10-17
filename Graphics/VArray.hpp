@@ -2,7 +2,7 @@
 #include "VBuffer.hpp"
 #include "VAttributes.hpp"
 
-namespace ga {
+namespace vn {
     class VArray {
     public:
         VArray();

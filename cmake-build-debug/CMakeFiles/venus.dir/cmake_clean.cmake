@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/venus.dir/Game/Collider.cpp.o"
+  "CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o"
   "CMakeFiles/venus.dir/Graphics/Camera.cpp.o"
   "CMakeFiles/venus.dir/Graphics/Circle.cpp.o"
   "CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o"
+  "CMakeFiles/venus.dir/Graphics/ConvexShape.cpp.o"
   "CMakeFiles/venus.dir/Graphics/Cube.cpp.o"
   "CMakeFiles/venus.dir/Graphics/GLCall.cpp.o"
   "CMakeFiles/venus.dir/Graphics/IBuffer.cpp.o"

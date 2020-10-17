@@ -1,6 +1,6 @@
 #include "Model.hpp"
 
-namespace ga {
+namespace vn {
     Model::Model(const std::string &filename) {
         std::filesystem::path filepath(filename);
         if (!std::filesystem::exists(filepath)) {

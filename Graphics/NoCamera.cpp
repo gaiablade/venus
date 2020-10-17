@@ -1,6 +1,6 @@
 #include "NoCamera.hpp"
 
-namespace ga {
+namespace vn {
     NoCamera::NoCamera() {
         this->projection_matrix = mat4<float>::identity();
     }

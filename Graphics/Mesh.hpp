@@ -10,7 +10,7 @@
 #include "vec2.hpp"
 #include "mat4.hpp"
 
-namespace ga {
+namespace vn {
     struct Vertex {
         vec3<float> position;
         vec3<float> normal;

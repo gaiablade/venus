@@ -1,7 +1,8 @@
 #include "Shader.hpp"
 
-namespace ga {
+namespace vn {
     void Shader::CreateShader(const std::string &vertexShaderFile, const std::string &fragmentShaderFile) {
+        this->DBG_SHADER_FILES = { vertexShaderFile, fragmentShaderFile };
         std::ifstream vert_in(vertexShaderFile);
         std::ifstream frag_in(fragmentShaderFile);
         if (vert_in.fail()) {
@@ -82,5 +83,9 @@ namespace ga {
     void Shader::UniformVec4f(const std::string& name, const vec4f &vector) const {
         int location = glGetUniformLocation(this->n_ShaderProgramID, name.c_str());
         GLCall(glUniform4fv(location, 1, &vector.x));
+    }
+
+    vec2<std::string> Shader::DBG_GET_SHADER_FILES() const {
+        return this->DBG_SHADER_FILES;
     }
 }

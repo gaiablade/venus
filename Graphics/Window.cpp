@@ -1,6 +1,6 @@
 #include "Window.hpp"
 
-namespace ga {
+namespace vn {
     Window::Window(const WinParams &params) : attributes(params), camera(params.camera) {
         if (!glfwInit()) {
             std::cout << "Failed to initialize glfw.\n";
@@ -19,8 +19,12 @@ namespace ga {
         GLCall(glEnable(GL_DEPTH_TEST));
         GLCall(glDepthFunc(GL_LEQUAL));
 
+        this->d_ShaderDirectory = params.directory;
+        const fs::path v = d_ShaderDirectory / fs::path(params.f_VertexShader);
+        const fs::path f = d_ShaderDirectory / fs::path(params.f_FragmentShader);
+
         this->shaders.insert(std::make_pair<std::string, Shader>("Default", {}));
-        this->shaders["Default"].CreateShader(params.f_VertexShader, params.f_FragmentShader);
+        this->shaders["Default"].CreateShader(v.c_str(), f.c_str());
         this->shaders["Default"].Use();
     }
 
@@ -50,7 +54,9 @@ namespace ga {
     void Window::AddShader(const std::string &name, const std::string &f_VertexShader,
                            const std::string &f_FragmentShader) {
         this->shaders.insert(std::make_pair<std::string, Shader>(name.c_str(), {}));
-        this->shaders[name].CreateShader(f_VertexShader, f_FragmentShader);
+        fs::path v_shader = this->d_ShaderDirectory / fs::path(f_VertexShader);
+        fs::path f_shader = this->d_ShaderDirectory / fs::path(f_FragmentShader);
+        this->shaders[name].CreateShader(v_shader.c_str(), f_shader.c_str());
     }
 
     void Window::UseShader(const std::string &name) {
@@ -59,6 +65,14 @@ namespace ga {
             this->s_CurrentShader = name;
             it->second.Use();
         }
+    }
+
+    Shader& Window::GetShader(const std::string &shaderName) {
+        const auto it = this->shaders.find(shaderName);
+        if (it != this->shaders.end()) {
+            return it->second;
+        }
+        return this->shaders.at(s_CurrentShader);
     }
 
     void Window::setBillboarding(const bool &conditional) {
@@ -86,6 +100,17 @@ namespace ga {
     const bool Window::IsKeyPressed(const key& code) const {
         auto status = glfwGetKey(this->w, (int) code);
         return status == GLFW_PRESS || status == GLFW_REPEAT;
+    }
+
+    const bool Window::IsMouseButtonPressed(const key &code) const {
+        auto status = glfwGetMouseButton(this->w, (int)code);
+        return status == GLFW_PRESS || status == GLFW_REPEAT;
+    }
+
+    const vec2f Window::GetMousePosition() {
+        double x, y;
+        glfwGetCursorPos(getGLFWWindow(), &x, &y);
+        return {(float)x, (float)y};
     }
 
     GLFWwindow*& Window::getGLFWWindow() {

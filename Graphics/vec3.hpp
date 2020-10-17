@@ -6,7 +6,7 @@
 
 namespace num = std::numbers;
 
-namespace ga {
+namespace vn {
     template <typename T>
     struct vec3 {
         union {

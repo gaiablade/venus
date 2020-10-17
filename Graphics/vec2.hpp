@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cmath>
 
-namespace ga {
+namespace vn {
     template <typename T>
     class vec2 {
     public:
@@ -21,6 +21,12 @@ namespace ga {
     template <typename T>
     float vec2<T>::angle() const {
         return std::atan2(this->y, this->x);
+    }
+
+    template <typename T>
+    std::ostream& operator<<(std::ostream& out, vec2<T>& vec) {
+        out << "[ " << vec.x << ", " << vec.y << " ]";
+        return out;
     }
 
     typedef vec2<float> vec2f;

@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <filesystem>
 #include <map>
 #include <unordered_map>
 #include <GL/glew.h>
@@ -15,11 +16,21 @@
 #include "vec4.hpp"
 #include "Keycodes.hpp"
 
-namespace ga {
+namespace fs = std::filesystem;
+
+namespace vn {
     struct WinParams {
         uint32_t width{800}, height{600};
         std::string title, f_VertexShader, f_FragmentShader;
         Camera camera;
+
+        std::string directory{"./"};
+
+        WinParams(const vec2f& dimensions, const std::string_view& title,
+                  const std::string_view& v, const std::string_view& f, const Camera& cam,
+                  const std::string_view& d = "./")
+            : width(dimensions.x), height(dimensions.y),
+            title(title), f_VertexShader(v), f_FragmentShader(f), camera(cam), directory(d) {}
     };
 
     class Window {
@@ -33,12 +44,15 @@ namespace ga {
 
         void AddShader(const std::string& name, const std::string& f_VertexShader, const std::string& f_FragmentShader);
         void UseShader(const std::string& name);
+        Shader& GetShader(const std::string& shaderName);
 
         void setBillboarding(const bool&);
         void setWireframe(const bool&);
         void setClearColor(const vec4f& color);
 
         const bool IsKeyPressed(const key& code) const;
+        const bool IsMouseButtonPressed(const key& code) const;
+        const vec2f GetMousePosition();
 
         template <typename Drawable>
         void Draw(const Drawable& object);
@@ -52,6 +66,7 @@ namespace ga {
         Renderer renderer;
         std::unordered_map<std::string, Shader> shaders;
         std::string s_CurrentShader{"Default"};
+        fs::path d_ShaderDirectory;
         // gl
         GLFWwindow* w;
     };

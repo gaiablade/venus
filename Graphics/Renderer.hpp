@@ -5,7 +5,7 @@
 #include "Circle.hpp"
 #include "GLCall.hpp"
 
-namespace ga {
+namespace vn {
     class Renderer {
     public:
         template<typename Drawable>

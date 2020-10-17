@@ -1,6 +1,6 @@
 #include "VAttributes.hpp"
 
-namespace ga {
+namespace vn {
     template <typename T>
     void VAttributes::Insert(const int32_t& count) {
         static_assert(sizeof(T) == -1);
@@ -23,5 +23,9 @@ namespace ga {
             attr++;
             offset += attribute.size;
         }
+    }
+
+    std::vector<VAttribute>& VAttributes::getAttributes() {
+        return this->v_Attributes;
     }
 }

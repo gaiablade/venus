@@ -1,6 +1,6 @@
 #include "Rect.hpp"
 
-namespace ga {
+namespace vn {
     Rect::Rect(const vec2<float> &dimensions) :
             indices({0, 1, 2, 3, 1, 2}),
             buffer({

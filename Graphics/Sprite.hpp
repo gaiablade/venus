@@ -9,7 +9,7 @@
 #include "mat4.hpp"
 #include "Tex2d.hpp"
 
-namespace ga {
+namespace vn {
     class Sprite {
     public:
         Sprite(Tex2d& texture);

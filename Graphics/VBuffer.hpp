@@ -3,7 +3,7 @@
 #include <GL/glew.h>
 #include "GLCall.hpp"
 
-namespace ga {
+namespace vn {
     struct Attribute {
         uint32_t n_Type;
         uint32_t n_Size;
@@ -13,7 +13,7 @@ namespace ga {
     public:
         VBuffer() = default;
         VBuffer(const void* data, uint32_t bytes_Size, uint32_t usage = GL_STATIC_DRAW);
-        VBuffer(VBuffer&& source); // move constructor
+        VBuffer(VBuffer&& source) noexcept ; // move constructor
         ~VBuffer();
         void Bind() const;
         void Unbind() const;

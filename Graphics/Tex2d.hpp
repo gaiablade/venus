@@ -6,7 +6,7 @@
 #include "GLCall.hpp"
 #include "../vendor/stb_image/stb_image.h"
 
-namespace ga {
+namespace vn {
     template <size_t n_Width, size_t n_Height>
     struct tex_data {
         size_t width = n_Width, height = n_Height;

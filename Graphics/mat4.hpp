@@ -10,7 +10,7 @@
 
 namespace num = std::numbers;
 
-namespace ga {
+namespace vn {
     enum class CON {
         ORTHO = 0
     };

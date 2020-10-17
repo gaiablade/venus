@@ -9,7 +9,7 @@
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 
-namespace ga {
+namespace vn {
     class Shader {
     public:
         //Shader(const std::string& vertexShaderFile, const std::string& fragmentShaderFile);
@@ -27,10 +27,16 @@ namespace ga {
 
         void UniformVec4f(const std::string& name, const vec4f& vector) const;
 
+        // For debugging:
+        vec2<std::string> DBG_GET_SHADER_FILES() const;
+
     private:
         std::string s_VertexShaderSource, s_FragmentShaderSource;
         int n_ShaderProgramID;
         uint32_t n_VertexShaderID, n_FragmentShaderID;
+
+        // For debugging:
+        vec2<std::string> DBG_SHADER_FILES;
     };
 }
 

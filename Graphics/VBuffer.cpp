@@ -1,6 +1,6 @@
 #include "VBuffer.hpp"
 
-namespace ga {
+namespace vn {
     VBuffer::VBuffer(const void* data, uint32_t bytes_Size, uint32_t usage) {
         GLCall(glGenBuffers(1, &this->n_BufferID));
         this->Bind();
@@ -12,7 +12,7 @@ namespace ga {
         GLCall(glDeleteBuffers(1, &this->n_BufferID));
     }
 
-    VBuffer::VBuffer(VBuffer&& source) // Move constructor
+    VBuffer::VBuffer(VBuffer&& source) noexcept // Move constructor
         : n_BufferID(source.n_BufferID)
     {
         source.n_BufferID = 0;

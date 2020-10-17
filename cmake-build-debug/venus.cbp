@@ -98,6 +98,12 @@
 		<Unit filename="/home/caleb/Github/venus/Graphics.hpp">
 			<Option target="venus"/>
 		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/AbstractShape.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/AbstractShape.hpp">
+			<Option target="venus"/>
+		</Unit>
 		<Unit filename="/home/caleb/Github/venus/Graphics/Camera.cpp">
 			<Option target="venus"/>
 		</Unit>
@@ -114,6 +120,12 @@
 			<Option target="venus"/>
 		</Unit>
 		<Unit filename="/home/caleb/Github/venus/Graphics/ColorRect.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/ConvexShape.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Graphics/ConvexShape.hpp">
 			<Option target="venus"/>
 		</Unit>
 		<Unit filename="/home/caleb/Github/venus/Graphics/Cube.cpp">
