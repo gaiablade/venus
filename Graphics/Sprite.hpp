@@ -31,10 +31,16 @@ namespace vn {
 
         void setScale(const vec2<float> &s);
 
+        void setTexRectangle(float l, float t, float w, float h);
+
         // Get functions:
         vec2<float>& getDimensions();
 
         vec2<float> getPosition() const;
+
+        vec2f getScale() const;
+
+        void setFlipped(bool flipped);
 
     private:
         // properties
@@ -44,6 +50,7 @@ namespace vn {
         vec2<float> position{0.f, 0.f};
         vec2<float> scale{1.f, 1.f};
         float angle{0.f};
+        bool flipped{false};
 
         // opengl stuff
         std::array<uint32_t, 6> indices;

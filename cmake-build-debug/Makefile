@@ -170,6 +170,33 @@ Game/Collider.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/Game/Collider.cpp.s
 .PHONY : Game/Collider.cpp.s
 
+Game/DeltaTime.o: Game/DeltaTime.cpp.o
+
+.PHONY : Game/DeltaTime.o
+
+# target to build an object file
+Game/DeltaTime.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/Game/DeltaTime.cpp.o
+.PHONY : Game/DeltaTime.cpp.o
+
+Game/DeltaTime.i: Game/DeltaTime.cpp.i
+
+.PHONY : Game/DeltaTime.i
+
+# target to preprocess a source file
+Game/DeltaTime.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/Game/DeltaTime.cpp.i
+.PHONY : Game/DeltaTime.cpp.i
+
+Game/DeltaTime.s: Game/DeltaTime.cpp.s
+
+.PHONY : Game/DeltaTime.s
+
+# target to generate assembly for a file
+Game/DeltaTime.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/Game/DeltaTime.cpp.s
+.PHONY : Game/DeltaTime.cpp.s
+
 Graphics/AbstractShape.o: Graphics/AbstractShape.cpp.o
 
 .PHONY : Graphics/AbstractShape.o
@@ -899,6 +926,33 @@ Graphics/vec2.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/Graphics/vec2.cpp.s
 .PHONY : Graphics/vec2.cpp.s
 
+ImGui/ImGui.o: ImGui/ImGui.cpp.o
+
+.PHONY : ImGui/ImGui.o
+
+# target to build an object file
+ImGui/ImGui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/ImGui/ImGui.cpp.o
+.PHONY : ImGui/ImGui.cpp.o
+
+ImGui/ImGui.i: ImGui/ImGui.cpp.i
+
+.PHONY : ImGui/ImGui.i
+
+# target to preprocess a source file
+ImGui/ImGui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/ImGui/ImGui.cpp.i
+.PHONY : ImGui/ImGui.cpp.i
+
+ImGui/ImGui.s: ImGui/ImGui.cpp.s
+
+.PHONY : ImGui/ImGui.s
+
+# target to generate assembly for a file
+ImGui/ImGui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/venus.dir/build.make CMakeFiles/venus.dir/ImGui/ImGui.cpp.s
+.PHONY : ImGui/ImGui.cpp.s
+
 vendor/stb_image/stb_image.o: vendor/stb_image/stb_image.cpp.o
 
 .PHONY : vendor/stb_image/stb_image.o
@@ -938,6 +992,9 @@ help:
 	@echo "... Game/Collider.o"
 	@echo "... Game/Collider.i"
 	@echo "... Game/Collider.s"
+	@echo "... Game/DeltaTime.o"
+	@echo "... Game/DeltaTime.i"
+	@echo "... Game/DeltaTime.s"
 	@echo "... Graphics/AbstractShape.o"
 	@echo "... Graphics/AbstractShape.i"
 	@echo "... Graphics/AbstractShape.s"
@@ -1019,6 +1076,9 @@ help:
 	@echo "... Graphics/vec2.o"
 	@echo "... Graphics/vec2.i"
 	@echo "... Graphics/vec2.s"
+	@echo "... ImGui/ImGui.o"
+	@echo "... ImGui/ImGui.i"
+	@echo "... ImGui/ImGui.s"
 	@echo "... vendor/stb_image/stb_image.o"
 	@echo "... vendor/stb_image/stb_image.i"
 	@echo "... vendor/stb_image/stb_image.s"

@@ -45,6 +45,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/caleb/Github/venus/Graphics"/>
+					<Add directory="/home/caleb/Github/imgui"/>
 					<Add directory="/usr/include/c++/10"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
 					<Add directory="/usr/include/c++/10/backward"/>
@@ -69,6 +70,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/caleb/Github/venus/Graphics"/>
+					<Add directory="/home/caleb/Github/imgui"/>
 					<Add directory="/usr/include/c++/10"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
 					<Add directory="/usr/include/c++/10/backward"/>
@@ -93,6 +95,12 @@
 			<Option target="venus"/>
 		</Unit>
 		<Unit filename="/home/caleb/Github/venus/Game/Collider.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Game/DeltaTime.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/Game/DeltaTime.hpp">
 			<Option target="venus"/>
 		</Unit>
 		<Unit filename="/home/caleb/Github/venus/Graphics.hpp">
@@ -270,6 +278,15 @@
 			<Option target="venus"/>
 		</Unit>
 		<Unit filename="/home/caleb/Github/venus/Graphics/vec4.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/ImGui.hpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/ImGui/ImGui.cpp">
+			<Option target="venus"/>
+		</Unit>
+		<Unit filename="/home/caleb/Github/venus/ImGui/ImGui.hpp">
 			<Option target="venus"/>
 		</Unit>
 		<Unit filename="/home/caleb/Github/venus/System.hpp">

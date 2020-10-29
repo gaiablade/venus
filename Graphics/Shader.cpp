@@ -85,6 +85,16 @@ namespace vn {
         GLCall(glUniform4fv(location, 1, &vector.x));
     }
 
+    void Shader::UniformVec3f(const std::string& name, const vec3f& vector) const {
+        int location = glGetUniformLocation(this->n_ShaderProgramID, name.c_str());
+        GLCall(glUniform3fv(location, 1, &vector.x));
+    }
+
+    void Shader::UniformFloat(const std::string &name, const float &f) const {
+        int location = glGetUniformLocation(this->n_ShaderProgramID, name.c_str());
+        GLCall(glUniform1f(location, f));
+    }
+
     vec2<std::string> Shader::DBG_GET_SHADER_FILES() const {
         return this->DBG_SHADER_FILES;
     }

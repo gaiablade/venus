@@ -27,6 +27,10 @@ namespace vn {
 
         void UniformVec4f(const std::string& name, const vec4f& vector) const;
 
+        void UniformVec3f(const std::string& name, const vec3f& vector) const;
+
+        void UniformFloat(const std::string& name, const float& f) const;
+
         // For debugging:
         vec2<std::string> DBG_GET_SHADER_FILES() const;
 

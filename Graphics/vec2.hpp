@@ -6,7 +6,9 @@ namespace vn {
     template <typename T>
     class vec2 {
     public:
-        T x, y;
+        T x{}, y{};
+        vec2<T>() =default;
+        vec2<T>(T x, T y) : x(x), y(y) {}
         explicit operator vec2<float>() const { return { this->x, this->y }; }
         vec2<T> unit() const;
         float angle() const;

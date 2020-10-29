@@ -25,3 +25,4 @@
 #include "Graphics/vec3.hpp"
 #include "Graphics/vec4.hpp"
 #include "Graphics/Window.hpp"
+#include "Graphics/Text.hpp"

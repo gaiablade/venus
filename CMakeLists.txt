@@ -3,7 +3,9 @@ project(venus)
 
 set(CMAKE_CXX_STANDARD 20)
 
-include_directories(Graphics)
+include_directories(Graphics /home/caleb/Github/imgui
+        /usr/include/freetype2 /usr/include/libpng16
+        )
 
 add_library(venus
         Graphics/Camera.cpp
@@ -59,5 +61,11 @@ add_library(venus
         Graphics/AbstractShape.hpp
         Graphics/ConvexShape.cpp
         Graphics/ConvexShape.hpp
+        /home/caleb/Github/imgui/backends/imgui_impl_opengl3.cpp
+        /home/caleb/Github/imgui/backends/imgui_impl_glfw.cpp
+        /home/caleb/Github/imgui/imgui.cpp
+        /home/caleb/Github/imgui/imgui_demo.cpp
+        /home/caleb/Github/imgui/imgui_draw.cpp
+        /home/caleb/Github/imgui/imgui_widgets.cpp
         vendor/stb_image/stb_image.cpp
-        vendor/stb_image/stb_image.h Graphics/Keycodes.hpp Game/Collider.cpp Game/Collider.hpp Graphics/mat2.cpp Graphics/mat2.hpp System/Functions.hpp Game.hpp System.hpp Graphics/ColorRect.cpp Graphics/ColorRect.hpp)
+        vendor/stb_image/stb_image.h Graphics/Keycodes.hpp Game/Collider.cpp Game/Collider.hpp Graphics/mat2.cpp Graphics/mat2.hpp System/Functions.hpp Game.hpp System.hpp Graphics/ColorRect.cpp Graphics/ColorRect.hpp Game/DeltaTime.cpp Game/DeltaTime.hpp ImGui.hpp ImGui/ImGui.cpp ImGui/ImGui.hpp Graphics/Text.cpp Graphics/Text.hpp Graphics/Font.cpp Graphics/Font.hpp)

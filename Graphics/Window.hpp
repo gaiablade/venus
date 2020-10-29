@@ -60,6 +60,7 @@ namespace vn {
         GLFWwindow*& getGLFWWindow();
         WinParams& getAttributes();
         vec2<uint32_t> center();
+        vec2u getDimensions();
     //protected:
         WinParams attributes;
         Camera camera;
@@ -81,7 +82,9 @@ namespace vn {
     template <> inline
     void Window::Draw<Model>(const Model& object) {
         mat4<float> u_MVP = object.getModelView() * this->camera.getProjection();
+        mat4f u_Model = object.getModelView();
         this->shaders[s_CurrentShader].UniformMat4("u_MVP", u_MVP);
+        this->shaders[s_CurrentShader].UniformMat4("u_Model", u_Model);
         for (auto& mesh : object.meshes) {
             this->renderer.Draw(mesh);
         }

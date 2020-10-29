@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/venus.dir/Game/Collider.cpp.o"
+  "CMakeFiles/venus.dir/Game/DeltaTime.cpp.o"
   "CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o"
   "CMakeFiles/venus.dir/Graphics/Camera.cpp.o"
   "CMakeFiles/venus.dir/Graphics/Circle.cpp.o"
@@ -27,6 +28,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/venus.dir/Graphics/mat2.cpp.o"
   "CMakeFiles/venus.dir/Graphics/mat4.cpp.o"
   "CMakeFiles/venus.dir/Graphics/vec2.cpp.o"
+  "CMakeFiles/venus.dir/ImGui/ImGui.cpp.o"
   "CMakeFiles/venus.dir/vendor/stb_image/stb_image.cpp.o"
   "libvenus.a"
   "libvenus.pdb"

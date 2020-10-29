@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/caleb/Github/venus/Game/Collider.cpp" "/home/caleb/Github/venus/cmake-build-debug/CMakeFiles/venus.dir/Game/Collider.cpp.o"
+  "/home/caleb/Github/venus/Game/DeltaTime.cpp" "/home/caleb/Github/venus/cmake-build-debug/CMakeFiles/venus.dir/Game/DeltaTime.cpp.o"
   "/home/caleb/Github/venus/Graphics/AbstractShape.cpp" "/home/caleb/Github/venus/cmake-build-debug/CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o"
   "/home/caleb/Github/venus/Graphics/Camera.cpp" "/home/caleb/Github/venus/cmake-build-debug/CMakeFiles/venus.dir/Graphics/Camera.cpp.o"
   "/home/caleb/Github/venus/Graphics/Circle.cpp" "/home/caleb/Github/venus/cmake-build-debug/CMakeFiles/venus.dir/Graphics/Circle.cpp.o"
@@ -32,6 +33,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/caleb/Github/venus/Graphics/mat2.cpp" "/home/caleb/Github/venus/cmake-build-debug/CMakeFiles/venus.dir/Graphics/mat2.cpp.o"
   "/home/caleb/Github/venus/Graphics/mat4.cpp" "/home/caleb/Github/venus/cmake-build-debug/CMakeFiles/venus.dir/Graphics/mat4.cpp.o"
   "/home/caleb/Github/venus/Graphics/vec2.cpp" "/home/caleb/Github/venus/cmake-build-debug/CMakeFiles/venus.dir/Graphics/vec2.cpp.o"
+  "/home/caleb/Github/venus/ImGui/ImGui.cpp" "/home/caleb/Github/venus/cmake-build-debug/CMakeFiles/venus.dir/ImGui/ImGui.cpp.o"
   "/home/caleb/Github/venus/vendor/stb_image/stb_image.cpp" "/home/caleb/Github/venus/cmake-build-debug/CMakeFiles/venus.dir/vendor/stb_image/stb_image.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
@@ -39,6 +41,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../Graphics"
+  "/home/caleb/Github/imgui"
   )
 
 # Targets to which this target links.

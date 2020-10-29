@@ -25,6 +25,9 @@ namespace vn {
         // Generic constructor for use with image files
         Tex2d(const std::string& filename);
 
+        // Text
+        Tex2d(uint8_t* buffer, int width, int height);
+
         // Move constructor:
         //Tex2d(Tex2d&& other);
 
@@ -32,6 +35,9 @@ namespace vn {
 
         int getWidth() const;
         int getHeight() const;
+        int getWidth() { return this->n_TexWidth; }
+        int getHeight() { return this->n_TexHeight; }
+        int getTexID() { return this->n_TexID; }
     private:
         uint32_t n_TexID{};
 

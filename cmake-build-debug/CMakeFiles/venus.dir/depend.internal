@@ -8,6 +8,9 @@ CMakeFiles/venus.dir/Game/Collider.cpp.o
  /home/caleb/Github/venus/Graphics/vec2.hpp
  /home/caleb/Github/venus/Graphics/vec3.hpp
  /home/caleb/Github/venus/System/Functions.hpp
+CMakeFiles/venus.dir/Game/DeltaTime.cpp.o
+ /home/caleb/Github/venus/Game/DeltaTime.cpp
+ /home/caleb/Github/venus/Game/DeltaTime.hpp
 CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o
  /home/caleb/Github/venus/Graphics/AbstractShape.cpp
  /home/caleb/Github/venus/Graphics/AbstractShape.hpp
@@ -234,6 +237,41 @@ CMakeFiles/venus.dir/Graphics/mat4.cpp.o
 CMakeFiles/venus.dir/Graphics/vec2.cpp.o
  /home/caleb/Github/venus/Graphics/vec2.cpp
  /home/caleb/Github/venus/Graphics/vec2.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o
+ /home/caleb/Github/imgui/backends/imgui_impl_glfw.h
+ /home/caleb/Github/imgui/backends/imgui_impl_opengl3.h
+ /home/caleb/Github/imgui/imconfig.h
+ /home/caleb/Github/imgui/imgui.h
+ /home/caleb/Github/venus/Graphics.hpp
+ /home/caleb/Github/venus/Graphics/Camera.hpp
+ /home/caleb/Github/venus/Graphics/Circle.hpp
+ /home/caleb/Github/venus/Graphics/ColorRect.hpp
+ /home/caleb/Github/venus/Graphics/Cube.hpp
+ /home/caleb/Github/venus/Graphics/GLCall.hpp
+ /home/caleb/Github/venus/Graphics/IBuffer.hpp
+ /home/caleb/Github/venus/Graphics/Keycodes.hpp
+ /home/caleb/Github/venus/Graphics/Mesh.hpp
+ /home/caleb/Github/venus/Graphics/Model.hpp
+ /home/caleb/Github/venus/Graphics/NoCamera.hpp
+ /home/caleb/Github/venus/Graphics/Orthographic3dCamera.hpp
+ /home/caleb/Github/venus/Graphics/OrthographicCamera.hpp
+ /home/caleb/Github/venus/Graphics/Perspective3dCamera.hpp
+ /home/caleb/Github/venus/Graphics/Rect.hpp
+ /home/caleb/Github/venus/Graphics/Renderer.hpp
+ /home/caleb/Github/venus/Graphics/Shader.hpp
+ /home/caleb/Github/venus/Graphics/Sprite.hpp
+ /home/caleb/Github/venus/Graphics/Tex2d.hpp
+ /home/caleb/Github/venus/Graphics/VArray.hpp
+ /home/caleb/Github/venus/Graphics/VAttributes.hpp
+ /home/caleb/Github/venus/Graphics/VBuffer.hpp
+ /home/caleb/Github/venus/Graphics/Window.hpp
+ /home/caleb/Github/venus/Graphics/mat4.hpp
+ /home/caleb/Github/venus/Graphics/vec2.hpp
+ /home/caleb/Github/venus/Graphics/vec3.hpp
+ /home/caleb/Github/venus/Graphics/vec4.hpp
+ /home/caleb/Github/venus/ImGui/ImGui.cpp
+ /home/caleb/Github/venus/ImGui/ImGui.hpp
+ /home/caleb/Github/venus/vendor/stb_image/stb_image.h
 CMakeFiles/venus.dir/vendor/stb_image/stb_image.cpp.o
  /home/caleb/Github/venus/vendor/stb_image/stb_image.cpp
  /home/caleb/Github/venus/vendor/stb_image/stb_image.h

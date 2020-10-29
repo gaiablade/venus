@@ -1,5 +1,10 @@
 #include "Window.hpp"
 
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+    glViewport(0, 0, width, height);
+}
+
 namespace vn {
     Window::Window(const WinParams &params) : attributes(params), camera(params.camera) {
         if (!glfwInit()) {
@@ -13,11 +18,11 @@ namespace vn {
 
         glewInit();
 
-        GLCall(glClearColor(0.f, 0.2f, 1.f, 1.f));
-        GLCall(glEnable(GL_BLEND));
-        GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
         GLCall(glEnable(GL_DEPTH_TEST));
         GLCall(glDepthFunc(GL_LEQUAL));
+        GLCall(glEnable(GL_BLEND));
+        GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
+        GLCall(glClearColor(0.5f, 0.5f, 0.5f, 1.f));
 
         this->d_ShaderDirectory = params.directory;
         const fs::path v = d_ShaderDirectory / fs::path(params.f_VertexShader);
@@ -26,6 +31,8 @@ namespace vn {
         this->shaders.insert(std::make_pair<std::string, Shader>("Default", {}));
         this->shaders["Default"].CreateShader(v.c_str(), f.c_str());
         this->shaders["Default"].Use();
+
+        glfwSetFramebufferSizeCallback(w, framebuffer_size_callback);
     }
 
     Window::~Window() {
@@ -125,6 +132,12 @@ namespace vn {
         return {
                 this->attributes.width / 2, this->attributes.height / 2
         };
+    }
+
+    vec2u Window::getDimensions() {
+        int width, height;
+        glfwGetWindowSize(this->w, &width, &height);
+        return vec2u((uint32_t)width, (uint32_t)height);
     }
 
 }

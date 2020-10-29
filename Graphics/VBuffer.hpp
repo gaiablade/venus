@@ -18,6 +18,8 @@ namespace vn {
         void Bind() const;
         void Unbind() const;
 
+        void setData(const void* data, uint32_t bytes_Size, uint32_t usage = GL_STATIC_DRAW);
+
         // Debugging:
         uint32_t getID() const { return this->n_BufferID; }
     private:

@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++2a
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/caleb/Github/venus/Graphics 
+CXX_INCLUDES = -I/home/caleb/Github/venus/Graphics -I/home/caleb/Github/imgui 
 

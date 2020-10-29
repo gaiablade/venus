@@ -454,6 +454,32 @@ CMakeFiles/venus.dir/Graphics/ColorRect.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/venus.dir/Graphics/ColorRect.cpp.s"
 	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caleb/Github/venus/Graphics/ColorRect.cpp -o CMakeFiles/venus.dir/Graphics/ColorRect.cpp.s
 
+CMakeFiles/venus.dir/Game/DeltaTime.cpp.o: CMakeFiles/venus.dir/flags.make
+CMakeFiles/venus.dir/Game/DeltaTime.cpp.o: ../Game/DeltaTime.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/caleb/Github/venus/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/venus.dir/Game/DeltaTime.cpp.o"
+	/usr/bin/g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/venus.dir/Game/DeltaTime.cpp.o -c /home/caleb/Github/venus/Game/DeltaTime.cpp
+
+CMakeFiles/venus.dir/Game/DeltaTime.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/venus.dir/Game/DeltaTime.cpp.i"
+	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/caleb/Github/venus/Game/DeltaTime.cpp > CMakeFiles/venus.dir/Game/DeltaTime.cpp.i
+
+CMakeFiles/venus.dir/Game/DeltaTime.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/venus.dir/Game/DeltaTime.cpp.s"
+	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caleb/Github/venus/Game/DeltaTime.cpp -o CMakeFiles/venus.dir/Game/DeltaTime.cpp.s
+
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: CMakeFiles/venus.dir/flags.make
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../ImGui/ImGui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/caleb/Github/venus/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/venus.dir/ImGui/ImGui.cpp.o"
+	/usr/bin/g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/venus.dir/ImGui/ImGui.cpp.o -c /home/caleb/Github/venus/ImGui/ImGui.cpp
+
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/venus.dir/ImGui/ImGui.cpp.i"
+	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/caleb/Github/venus/ImGui/ImGui.cpp > CMakeFiles/venus.dir/ImGui/ImGui.cpp.i
+
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/venus.dir/ImGui/ImGui.cpp.s"
+	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caleb/Github/venus/ImGui/ImGui.cpp -o CMakeFiles/venus.dir/ImGui/ImGui.cpp.s
+
 # Object files for target venus
 venus_OBJECTS = \
 "CMakeFiles/venus.dir/Graphics/Camera.cpp.o" \
@@ -484,7 +510,9 @@ venus_OBJECTS = \
 "CMakeFiles/venus.dir/vendor/stb_image/stb_image.cpp.o" \
 "CMakeFiles/venus.dir/Game/Collider.cpp.o" \
 "CMakeFiles/venus.dir/Graphics/mat2.cpp.o" \
-"CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o"
+"CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o" \
+"CMakeFiles/venus.dir/Game/DeltaTime.cpp.o" \
+"CMakeFiles/venus.dir/ImGui/ImGui.cpp.o"
 
 # External object files for target venus
 venus_EXTERNAL_OBJECTS =
@@ -518,9 +546,11 @@ libvenus.a: CMakeFiles/venus.dir/vendor/stb_image/stb_image.cpp.o
 libvenus.a: CMakeFiles/venus.dir/Game/Collider.cpp.o
 libvenus.a: CMakeFiles/venus.dir/Graphics/mat2.cpp.o
 libvenus.a: CMakeFiles/venus.dir/Graphics/ColorRect.cpp.o
+libvenus.a: CMakeFiles/venus.dir/Game/DeltaTime.cpp.o
+libvenus.a: CMakeFiles/venus.dir/ImGui/ImGui.cpp.o
 libvenus.a: CMakeFiles/venus.dir/build.make
 libvenus.a: CMakeFiles/venus.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/caleb/Github/venus/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Linking CXX static library libvenus.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/caleb/Github/venus/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Linking CXX static library libvenus.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/venus.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/venus.dir/link.txt --verbose=$(VERBOSE)
 

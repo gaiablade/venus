@@ -16,8 +16,10 @@ namespace vn {
         GLCall(glGenTextures(1, &this->n_TexID));
         GLCall(glBindTexture(GL_TEXTURE_2D, this->n_TexID));
 
-        GLCall(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR));
-        GLCall(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR));
+        //GLCall(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR));
+        //GLCall(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR));
+        GLCall(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST));
+        GLCall(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST));
         GLCall(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE));
         GLCall(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE));
 
@@ -27,19 +29,21 @@ namespace vn {
         delete[] image_data;
     }
 
-    /*
-    Tex2d::Tex2d(Tex2d &&source) noexcept
-        : n_TexID(source.n_TexID), n_TexWidth(source.n_TexWidth), n_TexHeight(source.n_TexHeight), n_BytesPerPixel(source.n_BytesPerPixel)
-    {
-        source.n_TexID = 0;
-    }
-     */
+    Tex2d::Tex2d(uint8_t* buffer, int width, int height) {
+        GLCall(glGenTextures(1, &this->n_TexID));
+        GLCall(glBindTexture(GL_TEXTURE_2D, this->n_TexID));
 
-    /*
-    Tex2d::Tex2d(Tex2d &&other) : n_TexID(other.n_TexID) {
-        other.n_TexID = 0;
+        GLCall(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR));
+        GLCall(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR));
+        GLCall(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE));
+        GLCall(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE));
+
+        GLCall(glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, width, height,
+                            0, GL_RED, GL_UNSIGNED_BYTE, buffer));
+
+        this->n_TexWidth = width;
+        this->n_TexHeight = height;
     }
-     */
 
     void Tex2d::Bind(const int& slot) const {
         glActiveTexture(GL_TEXTURE0 + slot);

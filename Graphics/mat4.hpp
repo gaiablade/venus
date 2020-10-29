@@ -18,10 +18,16 @@ namespace vn {
     struct orthoData {
         float l, r, t, b;
         float n = 0.f, f = 100.f;
+        orthoData(float l, float r, float t, float b, float n = 0.f, float f = 100.f)
+            : l(l), r(r), t(t), b(b), n(n), f(f)
+        {
+        }
+        orthoData() =default;
     };
 
     struct perspData {
         float near, far, aspect, fov;
+        perspData(float near, float far, float aspect, float fov) : near(near), far(far), aspect(aspect), fov(fov) {}
     };
 
     template<typename T>

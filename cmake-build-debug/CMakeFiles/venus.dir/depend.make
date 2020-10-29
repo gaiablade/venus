@@ -8,6 +8,9 @@ CMakeFiles/venus.dir/Game/Collider.cpp.o: ../Graphics/vec2.hpp
 CMakeFiles/venus.dir/Game/Collider.cpp.o: ../Graphics/vec3.hpp
 CMakeFiles/venus.dir/Game/Collider.cpp.o: ../System/Functions.hpp
 
+CMakeFiles/venus.dir/Game/DeltaTime.cpp.o: ../Game/DeltaTime.cpp
+CMakeFiles/venus.dir/Game/DeltaTime.cpp.o: ../Game/DeltaTime.hpp
+
 CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o: ../Graphics/AbstractShape.cpp
 CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o: ../Graphics/AbstractShape.hpp
 CMakeFiles/venus.dir/Graphics/AbstractShape.cpp.o: ../Graphics/GLCall.hpp
@@ -233,6 +236,41 @@ CMakeFiles/venus.dir/Graphics/mat4.cpp.o: ../Graphics/vec3.hpp
 
 CMakeFiles/venus.dir/Graphics/vec2.cpp.o: ../Graphics/vec2.cpp
 CMakeFiles/venus.dir/Graphics/vec2.cpp.o: ../Graphics/vec2.hpp
+
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: /home/caleb/Github/imgui/backends/imgui_impl_glfw.h
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: /home/caleb/Github/imgui/backends/imgui_impl_opengl3.h
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: /home/caleb/Github/imgui/imconfig.h
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: /home/caleb/Github/imgui/imgui.h
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/Camera.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/Circle.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/ColorRect.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/Cube.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/GLCall.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/IBuffer.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/Keycodes.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/Mesh.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/Model.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/NoCamera.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/Orthographic3dCamera.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/OrthographicCamera.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/Perspective3dCamera.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/Rect.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/Renderer.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/Shader.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/Sprite.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/Tex2d.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/VArray.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/VAttributes.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/VBuffer.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/Window.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/mat4.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/vec2.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/vec3.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../Graphics/vec4.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../ImGui/ImGui.cpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../ImGui/ImGui.hpp
+CMakeFiles/venus.dir/ImGui/ImGui.cpp.o: ../vendor/stb_image/stb_image.h
 
 CMakeFiles/venus.dir/vendor/stb_image/stb_image.cpp.o: ../vendor/stb_image/stb_image.cpp
 CMakeFiles/venus.dir/vendor/stb_image/stb_image.cpp.o: ../vendor/stb_image/stb_image.h
