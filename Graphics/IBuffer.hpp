@@ -6,7 +6,7 @@
 namespace vn {
     class IBuffer {
     public:
-        IBuffer() = default;
+        IBuffer();
 
         IBuffer(const void *data, const uint32_t &size_Bytes, uint32_t usage = GL_STATIC_DRAW);
 
@@ -17,6 +17,8 @@ namespace vn {
         void Bind() const;
 
         void Unbind() const;
+
+        void setData(const void* data, const uint32_t &size_Bytes, uint32_t usage = GL_STATIC_DRAW) const;
 
         // DEBUGGING:
         std::uint32_t DBG_GET_ID() const { return this->n_BufferID; }

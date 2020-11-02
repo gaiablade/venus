@@ -13,7 +13,7 @@ namespace vn {
             std::cerr << "Could not load font" << std::endl;
             exit(1);
         }
-        FT_Set_Pixel_Sizes(face, 0, 48);
+        FT_Set_Pixel_Sizes(face, 0, 24);
         glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
         // Calculate dimensions of texture:
@@ -63,6 +63,8 @@ namespace vn {
             offsetX += face->glyph->bitmap.width + 1;
         }
 
+        n_PeakHeight = i_RowHeight;
+
         FT_Done_Face(face);
         FT_Done_FreeType(ft);
     }
@@ -77,5 +79,9 @@ namespace vn {
 
     void Font::Bind() const {
         this->texture->Bind();
+    }
+
+    int Font::getPeakHeight() const {
+        return this->n_PeakHeight;
     }
 }

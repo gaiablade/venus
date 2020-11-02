@@ -14,6 +14,8 @@ namespace vn {
             T data[4];
         };
 
+        vec4() =default;
+        vec4(T x, T y, T z, T w) : x(x), y(y), z(z), w(w) {}
         ~vec4() = default;
     };
 

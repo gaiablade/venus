@@ -17,6 +17,7 @@ namespace vn {
     }
 
     void VArray::Bind() const {
+        //std::cout << this->n_VArrayID << std::endl;
         GLCall(glBindVertexArray(this->n_VArrayID));
     }
 

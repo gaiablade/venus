@@ -1,56 +1,29 @@
 #include "Text.hpp"
 
+struct Word {
+    int i1, i2;
+    Word(int i1, int i2) : i1(i1), i2(i2) {}
+};
+
 namespace vn {
-    Text::Text(const std::string& str, Font* font) : font(font) {
-        auto length = str.length();
-        characters.reserve(length);
-        auto& dimensions = font->getDimensions();
-        float offsetX{};
-        int i{};
-        for (auto& c: str) {
-            auto& character = font->getCharacter(c);
-            characters.emplace_back();
-            characters.back().tl.position = vec2f(offsetX+character.bearing.x, -character.bearing.y);
-            characters.back().tr.position = vec2f(offsetX+character.dimensions.x+character.bearing.x, -character.bearing.y);
-            characters.back().bl.position = vec2f(offsetX+character.bearing.x, character.dimensions.y-character.bearing.y);
-            characters.back().br.position = vec2f(offsetX+character.dimensions.x+character.bearing.x, character.dimensions.y-character.bearing.y);
-            characters.back().tl.texCoords = vec2f(character.textureCoordinates.x/dimensions.x,
-                                                   character.textureCoordinates.y/dimensions.y);
-            characters.back().tr.texCoords = vec2f((character.textureCoordinates.x+character.dimensions.x)/dimensions.x,
-                                                   character.textureCoordinates.y/dimensions.y);
-            characters.back().bl.texCoords = vec2f(character.textureCoordinates.x/dimensions.x,
-                                                   (character.textureCoordinates.y+character.dimensions.y)/dimensions.y);
-            characters.back().br.texCoords = vec2f((character.textureCoordinates.x+character.dimensions.x)/dimensions.x,
-                                                   (character.textureCoordinates.y+character.dimensions.y)/dimensions.y);
-            indices.emplace_back(i);
-            indices.emplace_back(i+2);
-            indices.emplace_back(i+3);
-            indices.emplace_back(i);
-            indices.emplace_back(i+3);
-            indices.emplace_back(i+1);
-            i += 4;
-            //offsetX += character.dimensions.x + 2;
-            offsetX += character.advance >> 6;
-        }
-        vbuffer = new VBuffer((const void*)characters.data(), characters.size() * sizeof(Char));
-        varray = new VArray();
-        ibuffer = new IBuffer((const void*)indices.data(), sizeof(uint32_t) * indices.size());
-        vattributes = new VAttributes();
-        vattributes->Insert<float>(2);
-        vattributes->Insert<float>(2);
-        varray->addBuffer(*vbuffer, *vattributes);
+    Text::Text(const std::string& str, Font* font, float maxWidth) : font(font), maxWidth(maxWidth) {
+        vattributes.Insert<float>(2);
+        vattributes.Insert<float>(2);
+        varray.addBuffer(vbuffer, vattributes);
+        setText(str);
     }
 
-    Text::~Text() {
-        delete this->vbuffer;
-        delete this->varray;
-        delete this->ibuffer;
+    Text::Text(Text &&other)  noexcept :
+        characters(std::move(other.characters)), indices(std::move(other.indices)),
+        varray(std::move(other.varray)), vbuffer(std::move(other.vbuffer)),
+        ibuffer(std::move(other.ibuffer)), font(other.font)
+    {
     }
 
     void Text::Bind() const {
         this->font->Bind();
-        this->varray->Bind();
-        this->ibuffer->Bind();
+        this->varray.Bind();
+        this->ibuffer.Bind();
     }
 
     mat4f Text::getModelView() const {
@@ -59,5 +32,174 @@ namespace vn {
 
     std::vector<uint32_t> Text::getIndices() const {
         return this->indices;
+    }
+
+    vec2f Text::getDimensions() const {
+        return this->dimensions;
+    }
+
+    void Text::setText(const std::string &str) {
+        auto length = str.length();
+        characters.clear();
+        indices.clear();
+        characters.reserve(length);
+        auto& fontDimensions = font->getDimensions();
+        float offsetX{}, offsetY{};
+        int i{};
+        for (auto& c: str) {
+            auto& character = font->getCharacter(c);
+            if (maxWidth > 0 && offsetX + character.dimensions.x > this->maxWidth) {
+                offsetX = 0;
+                offsetY += (float)this->font->getPeakHeight();
+                this->dimensions.y += (float)this->font->getPeakHeight();
+            } else {
+                this->dimensions.x = std::max(this->dimensions.x, offsetX + character.dimensions.x);
+            }
+            characters.emplace_back();
+            characters.back().tl.position = vec2f(offsetX+character.bearing.x,
+                                                  offsetY-character.bearing.y);
+
+            characters.back().tr.position = vec2f(offsetX+character.dimensions.x+character.bearing.x,
+                                                  offsetY-character.bearing.y);
+
+            characters.back().bl.position = vec2f(offsetX+character.bearing.x,
+                                                  offsetY+character.dimensions.y-character.bearing.y);
+
+            characters.back().br.position = vec2f(offsetX+character.dimensions.x+character.bearing.x,
+                                                  offsetY+character.dimensions.y-character.bearing.y);
+
+            characters.back().tl.texCoords = vec2f(character.textureCoordinates.x/fontDimensions.x,
+                                                   character.textureCoordinates.y/fontDimensions.y);
+            characters.back().tr.texCoords = vec2f((character.textureCoordinates.x+character.dimensions.x)/fontDimensions.x,
+                                                   character.textureCoordinates.y/fontDimensions.y);
+            characters.back().bl.texCoords = vec2f(character.textureCoordinates.x/fontDimensions.x,
+                                                   (character.textureCoordinates.y+character.dimensions.y)/fontDimensions.y);
+            characters.back().br.texCoords = vec2f((character.textureCoordinates.x+character.dimensions.x)/fontDimensions.x,
+                                                   (character.textureCoordinates.y+character.dimensions.y)/fontDimensions.y);
+            indices.emplace_back(i);
+            indices.emplace_back(i+2);
+            indices.emplace_back(i+3);
+            indices.emplace_back(i);
+            indices.emplace_back(i+3);
+            indices.emplace_back(i+1);
+            i += 4;
+
+            offsetX += character.advance >> 6;
+        }
+        vbuffer.setData((void*)characters.data(), characters.size() * sizeof(Char), GL_DYNAMIC_DRAW);
+        ibuffer.setData((void*)indices.data(), indices.size() * sizeof(uint32_t), GL_DYNAMIC_DRAW);
+    }
+
+    void Text::setTextFormatted(const std::string &str) {
+        auto length = str.length();
+        characters.clear();
+        indices.clear();
+        characters.reserve(length);
+        this->dimensions = {};
+
+        std::vector<Word> words;
+
+        int ind1 = -1;
+        for (int i = 0; i < length; i++) {
+            if (str[i] == ' ' || i == 0 || i == length - 1) {
+                if (ind1 == -1) {
+                    ind1 = i;
+                } else {
+                    words.emplace_back(Word(ind1, i));
+                    ind1 = i + 1;
+                }
+            }
+        }
+
+        auto& fontDimensions = font->getDimensions();
+        float offsetX{}, offsetY{};
+        int i{};
+        for (auto& w: words) {
+            std::string_view sv(&str.c_str()[w.i1], w.i2 - w.i1);
+            int width{};
+            for (auto& c: sv) {
+                auto ch = font->getCharacter(c);
+                width += ch.advance >> 6;
+            }
+            if (offsetX + width > this->maxWidth) {
+                offsetX = 0;
+                offsetY += (float)this->font->getPeakHeight();
+                this->dimensions.y += (float)this->font->getPeakHeight();
+            }
+            for (auto& c: sv) {
+                auto character = font->getCharacter(c);
+                if (maxWidth > 0 && offsetX + character.dimensions.x > this->maxWidth) {
+                    offsetX = 0;
+                    offsetY += (float)this->font->getPeakHeight();
+                    this->dimensions.y += (float)this->font->getPeakHeight();
+                } else {
+                    this->dimensions.x = std::max(this->dimensions.x, offsetX + character.dimensions.x);
+                }
+                characters.emplace_back();
+                characters.back().tl.position = vec2f(offsetX+character.bearing.x,
+                                                      offsetY-character.bearing.y);
+
+                characters.back().tr.position = vec2f(offsetX+character.dimensions.x+character.bearing.x,
+                                                      offsetY-character.bearing.y);
+
+                characters.back().bl.position = vec2f(offsetX+character.bearing.x,
+                                                      offsetY+character.dimensions.y-character.bearing.y);
+
+                characters.back().br.position = vec2f(offsetX+character.dimensions.x+character.bearing.x,
+                                                      offsetY+character.dimensions.y-character.bearing.y);
+
+                characters.back().tl.texCoords = vec2f(character.textureCoordinates.x/fontDimensions.x,
+                                                       character.textureCoordinates.y/fontDimensions.y);
+                characters.back().tr.texCoords = vec2f((character.textureCoordinates.x+character.dimensions.x)/fontDimensions.x,
+                                                       character.textureCoordinates.y/fontDimensions.y);
+                characters.back().bl.texCoords = vec2f(character.textureCoordinates.x/fontDimensions.x,
+                                                       (character.textureCoordinates.y+character.dimensions.y)/fontDimensions.y);
+                characters.back().br.texCoords = vec2f((character.textureCoordinates.x+character.dimensions.x)/fontDimensions.x,
+                                                       (character.textureCoordinates.y+character.dimensions.y)/fontDimensions.y);
+                indices.emplace_back(i);
+                indices.emplace_back(i+2);
+                indices.emplace_back(i+3);
+                indices.emplace_back(i);
+                indices.emplace_back(i+3);
+                indices.emplace_back(i+1);
+                i += 4;
+
+                offsetX += character.advance >> 6;
+            }
+            auto space = font->getCharacter(' ');
+            this->dimensions.x = std::max(this->dimensions.x, offsetX + space.dimensions.x);
+            characters.emplace_back();
+            characters.back().tl.position = vec2f(offsetX+space.bearing.x,
+                                                  offsetY-space.bearing.y);
+
+            characters.back().tr.position = vec2f(offsetX+space.dimensions.x+space.bearing.x,
+                                                  offsetY-space.bearing.y);
+
+            characters.back().bl.position = vec2f(offsetX+space.bearing.x,
+                                                  offsetY+space.dimensions.y-space.bearing.y);
+
+            characters.back().br.position = vec2f(offsetX+space.dimensions.x+space.bearing.x,
+                                                  offsetY+space.dimensions.y-space.bearing.y);
+
+            characters.back().tl.texCoords = vec2f(space.textureCoordinates.x/fontDimensions.x,
+                                                   space.textureCoordinates.y/fontDimensions.y);
+            characters.back().tr.texCoords = vec2f((space.textureCoordinates.x+space.dimensions.x)/fontDimensions.x,
+                                                   space.textureCoordinates.y/fontDimensions.y);
+            characters.back().bl.texCoords = vec2f(space.textureCoordinates.x/fontDimensions.x,
+                                                   (space.textureCoordinates.y+space.dimensions.y)/fontDimensions.y);
+            characters.back().br.texCoords = vec2f((space.textureCoordinates.x+space.dimensions.x)/fontDimensions.x,
+                                                   (space.textureCoordinates.y+space.dimensions.y)/fontDimensions.y);
+            indices.emplace_back(i);
+            indices.emplace_back(i+2);
+            indices.emplace_back(i+3);
+            indices.emplace_back(i);
+            indices.emplace_back(i+3);
+            indices.emplace_back(i+1);
+            i += 4;
+
+            offsetX += space.advance >> 6;
+        }
+        vbuffer.setData((void*)characters.data(), characters.size() * sizeof(Char), GL_DYNAMIC_DRAW);
+        ibuffer.setData((void*)indices.data(), indices.size() * sizeof(uint32_t), GL_DYNAMIC_DRAW);
     }
 }

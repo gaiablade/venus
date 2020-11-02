@@ -1,6 +1,10 @@
 #include "VBuffer.hpp"
 
 namespace vn {
+    VBuffer::VBuffer() {
+        GLCall(glGenBuffers(1, &this->n_BufferID));
+    }
+
     VBuffer::VBuffer(const void* data, uint32_t bytes_Size, uint32_t usage) {
         GLCall(glGenBuffers(1, &this->n_BufferID));
         this->Bind();
@@ -29,5 +33,6 @@ namespace vn {
     void VBuffer::setData(const void* data, uint32_t bytes_Size, uint32_t usage) {
         this->Bind();
         GLCall(glBufferData(GL_ARRAY_BUFFER, bytes_Size, data, usage));
+        this->Unbind();
     }
 }

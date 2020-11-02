@@ -21,9 +21,11 @@ namespace vn {
         Character& getCharacter(uint8_t c);
         vec2i& getDimensions();
         void Bind() const;
+        int getPeakHeight() const;
     private:
         Tex2d* texture;
         std::array<Character, 128> characters{};
         vec2i dimensions{};
+        int n_PeakHeight;
     };
 }

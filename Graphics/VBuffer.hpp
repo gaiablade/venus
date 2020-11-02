@@ -11,7 +11,7 @@ namespace vn {
 
     class VBuffer {
     public:
-        VBuffer() = default;
+        VBuffer();
         VBuffer(const void* data, uint32_t bytes_Size, uint32_t usage = GL_STATIC_DRAW);
         VBuffer(VBuffer&& source) noexcept ; // move constructor
         ~VBuffer();
