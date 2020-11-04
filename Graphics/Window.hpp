@@ -15,6 +15,7 @@
 #include "GLCall.hpp"
 #include "vec4.hpp"
 #include "Keycodes.hpp"
+#include "Text.hpp"
 
 namespace fs = std::filesystem;
 
@@ -24,11 +25,11 @@ namespace vn {
         std::string title, f_VertexShader, f_FragmentShader;
         Camera camera;
 
-        std::string directory{"./"};
+        std::string directory{};
 
         WinParams(const vec2f& dimensions, const std::string_view& title,
                   const std::string_view& v, const std::string_view& f, const Camera& cam,
-                  const std::string_view& d = "./")
+                  const std::string_view& d = "")
             : width(dimensions.x), height(dimensions.y),
             title(title), f_VertexShader(v), f_FragmentShader(f), camera(cam), directory(d) {}
     };
@@ -88,6 +89,14 @@ namespace vn {
         for (auto& mesh : object.meshes) {
             this->renderer.Draw(mesh);
         }
+    }
+
+    template <> inline
+    void Window::Draw<Text>(const Text& object) {
+        mat4<float> u_MVP = object.getModelView() * this->camera.getProjection();
+        this->shaders[s_CurrentShader].UniformMat4("u_MVP", u_MVP);
+        this->shaders[s_CurrentShader].UniformVec4f("u_TextColor", object.getColor());
+        this->renderer.Draw(object);
     }
 }
 

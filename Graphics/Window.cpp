@@ -7,6 +7,8 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 
 namespace vn {
     Window::Window(const WinParams &params) : attributes(params), camera(params.camera) {
+        const fs::path p = fs::path(__FILE__).parent_path();
+
         if (!glfwInit()) {
             std::cout << "Failed to initialize glfw.\n";
             exit(1);
@@ -24,7 +26,11 @@ namespace vn {
         GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
         GLCall(glClearColor(0.5f, 0.5f, 0.5f, 1.f));
 
-        this->d_ShaderDirectory = params.directory;
+        if (params.directory.empty()) {
+            this->d_ShaderDirectory = p.parent_path();
+        } else {
+            this->d_ShaderDirectory = params.directory;
+        }
         const fs::path v = d_ShaderDirectory / fs::path(params.f_VertexShader);
         const fs::path f = d_ShaderDirectory / fs::path(params.f_FragmentShader);
 

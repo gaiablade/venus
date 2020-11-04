@@ -1,3 +1,4 @@
+#pragma once
 #include "Font.hpp"
 #include "VBuffer.hpp"
 #include "VArray.hpp"
@@ -6,6 +7,7 @@
 #include <fmt/core.h>
 #include <ft2build.h>
 #include FT_FREETYPE_H
+#include "vec4.hpp"
 
 struct Vertex {
     vn::vec2f position, texCoords;
@@ -23,6 +25,7 @@ namespace vn {
         ~Text() =default;
         void Bind() const;
         mat4f getModelView() const;
+        vec4f getColor() const;
         std::vector<uint32_t> getIndices() const;
         vec2f position{};
         vec2f getDimensions() const;
@@ -30,12 +33,14 @@ namespace vn {
         void setText(const std::string& str);
         void setTextFormatted(const std::string& str);
         void setVisibleChars(int num);
+        void setTextColor(const vn::vec4f& color);
     private:
         std::vector<Char> characters;
         std::vector<uint32_t> indices;
         Font* font{nullptr};
-        float maxWidth{};
+        const float maxWidth;
         vec2f dimensions;
+        vn::vec4f color{1, 1, 1, 1};
 
         VBuffer vbuffer;
         IBuffer ibuffer;

@@ -1,3 +1,4 @@
+#pragma once
 #include "Tex2d.hpp"
 #include "Sprite.hpp"
 #include <ft2build.h>
