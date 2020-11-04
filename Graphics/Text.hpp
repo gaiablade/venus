@@ -29,6 +29,7 @@ namespace vn {
 
         void setText(const std::string& str);
         void setTextFormatted(const std::string& str);
+        void setVisibleChars(int num);
     private:
         std::vector<Char> characters;
         std::vector<uint32_t> indices;

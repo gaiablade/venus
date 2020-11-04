@@ -202,4 +202,8 @@ namespace vn {
         vbuffer.setData((void*)characters.data(), characters.size() * sizeof(Char), GL_DYNAMIC_DRAW);
         ibuffer.setData((void*)indices.data(), indices.size() * sizeof(uint32_t), GL_DYNAMIC_DRAW);
     }
+
+    void Text::setVisibleChars(int num) {
+        this->indices.resize(6 * num);
+    }
 }
