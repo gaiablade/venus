@@ -15,6 +15,11 @@ namespace vn {
                 T x, y, z;
             };
         };
+
+        vec3() =default;
+
+        vec3(T x, T y, T z) : x(x), y(y), z(z) {}
+
         T& operator[] (int index) { return data[index]; }
 
         static vec3<T> degrees(const vec3<T>& vec);

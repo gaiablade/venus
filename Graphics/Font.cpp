@@ -69,6 +69,10 @@ namespace vn {
         FT_Done_FreeType(ft);
     }
 
+    Font::~Font() {
+        delete this->texture;
+    }
+
     Character& Font::getCharacter(uint8_t c) {
         return this->characters[c];
     }

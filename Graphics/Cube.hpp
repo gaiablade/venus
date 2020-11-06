@@ -21,7 +21,7 @@ namespace vn {
         std::vector<float> vertices;
         std::vector<std::uint32_t> indices;
         vec3<float> position{};
-        vec3<float> scale{1.f, 1.f};
+        vec3<float> scale{1.f, 1.f, 0.f};
         vec3<float> rotation{};
 
         // opengl

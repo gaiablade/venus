@@ -78,6 +78,10 @@ namespace vn {
         return this->dimensions;
     }
 
+    vec2f Sprite::getScaledDimensions() const {
+        return vec2f(dimensions.x * scale.x, dimensions.y * scale.y);
+    }
+
     vec2<float> Sprite::getPosition() const {
         return this->position;
     }

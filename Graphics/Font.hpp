@@ -18,7 +18,7 @@ namespace vn {
     class Font {
     public:
         Font(const std::string& filepath);
-        ~Font() =default;
+        ~Font();
         Character& getCharacter(uint8_t c);
         vec2i& getDimensions();
         void Bind() const;

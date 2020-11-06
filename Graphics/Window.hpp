@@ -58,6 +58,9 @@ namespace vn {
         template <typename Drawable>
         void Draw(const Drawable& object);
 
+        template <typename Drawable>
+        void Draw(const Drawable& object, vn::Camera& camera);
+
         GLFWwindow*& getGLFWWindow();
         WinParams& getAttributes();
         vec2<uint32_t> center();
@@ -76,6 +79,13 @@ namespace vn {
     template <typename Drawable>
     void Window::Draw(const Drawable& object) {
         mat4<float> u_MVP = object.getModelView() * this->camera.getProjection();
+        this->shaders[s_CurrentShader].UniformMat4("u_MVP", u_MVP);
+        this->renderer.Draw(object);
+    }
+
+    template <typename Drawable>
+    void Window::Draw(const Drawable& object, vn::Camera& camera) {
+        mat4<float> u_MVP = object.getModelView() * camera.getProjection();
         this->shaders[s_CurrentShader].UniformMat4("u_MVP", u_MVP);
         this->renderer.Draw(object);
     }

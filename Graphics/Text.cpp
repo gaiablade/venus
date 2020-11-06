@@ -17,8 +17,10 @@ namespace vn {
         characters(std::move(other.characters)), indices(std::move(other.indices)),
         varray(std::move(other.varray)), vbuffer(std::move(other.vbuffer)),
         ibuffer(std::move(other.ibuffer)), font(other.font),
-        maxWidth(other.maxWidth), dimensions(other.dimensions)
+        maxWidth(other.maxWidth), dimensions(other.dimensions),
+        position(other.position)
     {
+        //std::cout << "Move" << std::endl;
     }
 
     void Text::Bind() const {
@@ -105,14 +107,18 @@ namespace vn {
 
         // Split string into separate words using space as a delimiter
         std::vector<std::string_view> words;
-        int ind1 = -1;
-        for (int i = 0; i < length; i++) {
-            if (str[i] == ' ' || i == 0 || i == length - 1) {
-                if (ind1 == -1) {
-                    ind1 = i;
-                } else {
-                    words.emplace_back(std::string_view(&str.c_str()[ind1], i - ind1 + 1));
-                    ind1 = i + 1;
+        if (str.length() == 1) {
+            words.emplace_back(std::string_view(str.c_str(), 1));
+        } else {
+            int ind1 = -1;
+            for (int i = 0; i < length; i++) {
+                if (str[i] == ' ' || i == 0 || i == length - 1) {
+                    if (ind1 == -1) {
+                        ind1 = i;
+                    } else {
+                        words.emplace_back(std::string_view(&str.c_str()[ind1], i - ind1 + 1));
+                        ind1 = i + 1;
+                    }
                 }
             }
         }

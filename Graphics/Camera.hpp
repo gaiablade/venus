@@ -11,7 +11,6 @@ namespace vn {
     public:
         mat4<float> &getProjection();
         static glm::mat4 getProjection_glm();
-
     protected:
         /**
          * MVP computed by multiplying projection matrix with model-view matrix

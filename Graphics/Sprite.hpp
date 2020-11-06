@@ -36,6 +36,8 @@ namespace vn {
         // Get functions:
         vec2<float>& getDimensions();
 
+        vec2f getScaledDimensions() const;
+
         vec2<float> getPosition() const;
 
         vec2f getScale() const;
