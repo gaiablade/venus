@@ -29,6 +29,8 @@ namespace vn {
 
         void setRotation(const float &a);
 
+        float getRotation() const;
+
         void setScale(const vec2<float> &s);
 
         void setTexRectangle(float l, float t, float w, float h);

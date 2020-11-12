@@ -45,6 +45,17 @@ namespace vn {
         this->n_TexHeight = height;
     }
 
+    Tex2d::Tex2d(Tex2d &&other)  noexcept :
+        n_TexID(other.n_TexID), n_TexWidth(other.n_TexWidth), n_TexHeight(other.n_TexHeight),
+        n_BytesPerPixel(other.n_BytesPerPixel)
+    {
+        other.n_TexID = 0;
+    }
+
+    Tex2d::~Tex2d() {
+        GLCall(glDeleteTextures(1, &this->n_TexID));
+    }
+
     void Tex2d::Bind(const int& slot) const {
         glActiveTexture(GL_TEXTURE0 + slot);
         glBindTexture(GL_TEXTURE_2D, this->n_TexID);

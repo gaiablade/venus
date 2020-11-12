@@ -28,8 +28,12 @@ namespace vn {
         // Text
         Tex2d(uint8_t* buffer, int width, int height);
 
+        Tex2d(const Tex2d&) =delete;
+
         // Move constructor:
-        //Tex2d(Tex2d&& other);
+        Tex2d(Tex2d&& other) noexcept;
+
+        ~Tex2d();
 
         void Bind(const int& slot = 0) const;
 

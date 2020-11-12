@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-#include <vector>
 #include <filesystem>
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>

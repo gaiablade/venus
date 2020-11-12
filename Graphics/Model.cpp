@@ -70,9 +70,9 @@ namespace vn {
             for(std::uint32_t i = 0; i < material->GetTextureCount(aiTextureType_DIFFUSE); i++) {
                 aiString str;
                 material->GetTexture(aiTextureType_DIFFUSE, i, &str);
-                textures.emplace_back(this->s_FileDirectory + str.C_Str());
+                textures.emplace_back(std::move(vn::Tex2d(this->s_FileDirectory + str.C_Str())));
             }
         }
-        return Mesh(vertices, indices, textures);
+        return Mesh(vertices, indices, std::move(textures));
     }
 }

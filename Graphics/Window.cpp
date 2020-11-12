@@ -44,6 +44,7 @@ namespace vn {
     Window::~Window() {
         if (this->w != nullptr) {
             glfwDestroyWindow(this->w);
+            glfwTerminate();
         }
     }
 

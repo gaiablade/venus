@@ -56,7 +56,8 @@ add_library(venus
         Graphics/vec3.hpp
         Graphics/vec4.hpp
         Graphics/Window.cpp
-        Graphics/Window.hpp Graphics.hpp
+        Graphics/Window.hpp
+        Graphics.hpp
         Graphics/AbstractShape.cpp
         Graphics/AbstractShape.hpp
         Graphics/ConvexShape.cpp
@@ -68,4 +69,25 @@ add_library(venus
         /home/caleb/Github/imgui/imgui_draw.cpp
         /home/caleb/Github/imgui/imgui_widgets.cpp
         vendor/stb_image/stb_image.cpp
-        vendor/stb_image/stb_image.h Graphics/Keycodes.hpp Game/Collider.cpp Game/Collider.hpp Graphics/mat2.cpp Graphics/mat2.hpp System/Functions.hpp Game.hpp System.hpp Graphics/ColorRect.cpp Graphics/ColorRect.hpp Game/DeltaTime.cpp Game/DeltaTime.hpp ImGui.hpp ImGui/ImGui.cpp ImGui/ImGui.hpp Graphics/Text.cpp Graphics/Text.hpp Graphics/Font.cpp Graphics/Font.hpp)
+        vendor/stb_image/stb_image.h
+        Graphics/Keycodes.hpp
+        Game/Collider.cpp
+        Game/Collider.hpp
+        Graphics/mat2.cpp
+        Graphics/mat2.hpp
+        System/Functions.hpp
+        Game.hpp
+        System.hpp
+        Graphics/ColorRect.cpp
+        Graphics/ColorRect.hpp
+        Game/DeltaTime.cpp
+        Game/DeltaTime.hpp
+        Game/InputWatcher.cpp
+        Game/InputWatcher.hpp
+        ImGui.hpp
+        ImGui/ImGui.cpp
+        ImGui/ImGui.hpp
+        Graphics/Text.cpp
+        Graphics/Text.hpp
+        Graphics/Font.cpp
+        Graphics/Font.hpp)

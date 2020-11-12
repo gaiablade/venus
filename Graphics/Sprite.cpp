@@ -51,6 +51,10 @@ namespace vn {
         this->angle = a;
     }
 
+    float Sprite::getRotation() const {
+        return this->angle;
+    }
+
     void Sprite::setScale(const vec2<float> &s) {
         this->scale = {flipped ? std::abs(s.x) * -1 : std::abs(s.x), s.y};
     }
