@@ -24,16 +24,20 @@ namespace vn {
         Text(Text&& other) noexcept ;
         ~Text() =default;
         void Bind() const;
-        mat4f getModelView() const;
+        mat4f getModel() const;
         vec4f getColor() const;
         std::vector<uint32_t> getIndices() const;
         vec2f position{};
         vec2f getDimensions() const;
 
+        void setPosition(const vec2f& position);
         void setText(const std::string& str);
         void setTextFormatted(const std::string& str);
         void setVisibleChars(int num);
         void setTextColor(const vn::vec4f& color);
+        [[nodiscard]] vec2f getPosition() const;
+        [[nodiscard]] int getOpenGLDrawMode() const { return ogl_DrawMode; }
+        void setOpenGLDrawMode(int mode) { this->ogl_DrawMode = mode; }
     private:
         std::vector<Char> characters;
         std::vector<uint32_t> indices;
@@ -42,10 +46,12 @@ namespace vn {
         vec2f dimensions;
         vn::vec4f color{1, 1, 1, 1};
 
+        // Opengl stuff
         VBuffer vbuffer;
         IBuffer ibuffer;
         VArray varray;
         VAttributes vattributes;
+        int ogl_DrawMode = GL_TRIANGLES;
     };
 }
 

@@ -18,8 +18,9 @@ namespace vn {
     struct orthoData {
         float l, r, t, b;
         float n = 0.f, f = 100.f;
+        float width, height;
         orthoData(float l, float r, float t, float b, float n = 0.f, float f = 100.f)
-            : l(l), r(r), t(t), b(b), n(n), f(f)
+            : l(l), r(r), t(t), b(b), n(n), f(f), width(r - l), height(b - t)
         {
         }
         orthoData() =default;
@@ -68,6 +69,8 @@ namespace vn {
         const std::array<T, 4> &operator[](int index) const { return this->data[index]; }
 
         std::array<T, 4> &operator[](int index) { return this->data[index]; }
+
+        vec2<T> getPosition() const;
     };
 
     template<typename T>
@@ -323,6 +326,13 @@ namespace vn {
             }
         }
         return retMat;
+    }
+
+    template <typename T>
+    vec2<T> mat4<T>::getPosition() const {
+        T x = data[3][0];
+        T y = data[3][1];
+        return vec2<T>(x, y);
     }
 
     typedef mat4<float> mat4f;

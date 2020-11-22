@@ -1,26 +1,24 @@
 #pragma once
-#include <iostream>
 #include <array>
-#include "VBuffer.hpp"
-#include "VArray.hpp"
-#include "VAttributes.hpp"
+#include <iostream>
 #include "IBuffer.hpp"
-#include "vec2.hpp"
+#include "VArray.hpp"
 #include "mat4.hpp"
+#include "vec2.hpp"
 #include "vec4.hpp"
 
 namespace vn {
-    class ColorRect {
+    class BorderRect {
     public:
-        ColorRect(const vec4f& color, const vec2f& dimensions);
+        BorderRect(const vec4f& color, const vec2f& dimensions, int lineWidth = 1.f);
 
-        ColorRect(ColorRect&& other) noexcept ;
+        BorderRect(BorderRect&& other) noexcept ;
 
         void Bind() const;
 
         IBuffer &getIBuffer();
 
-        std::array<uint32_t, 6> getIndices() const;
+        std::array<uint32_t, 4> getIndices() const;
 
         mat4f getModel() const;
 
@@ -35,6 +33,8 @@ namespace vn {
         vec2f& getDimensions();
 
         vec2f getPosition() const;
+
+        void setLineWidth(int width);
 
         [[nodiscard]] int getOpenGLDrawMode() const { return ogl_DrawMode; }
 
@@ -53,14 +53,15 @@ namespace vn {
         vec2f position{0.f, 0.f};
         vec2f scale{1.f, 1.f};
         float angle{0.f};
+        uint32_t m_LineWidth = 1.f;
 
         // opengl stuff
-        std::array<uint32_t, 6> indices;
+        std::array<uint32_t, 4> indices;
         std::array<float, 24> buffer;
         VBuffer vbuffer;
         IBuffer ibuffer;
         VAttributes attributes;
         VArray varray;
-        int ogl_DrawMode = GL_TRIANGLES;
+        int ogl_DrawMode = GL_LINE_LOOP;
     };
-}
+};

@@ -8,17 +8,39 @@ include_directories(Graphics /home/caleb/Github/imgui
         )
 
 add_library(venus
+        Game.hpp
+        Game/Collider.cpp
+        Game/Collider.hpp
+        Game/DeltaTime.cpp
+        Game/DeltaTime.hpp
+        Game/InputWatcher.cpp
+        Game/InputWatcher.hpp
+        Graphics/AbstractShape.cpp
+        Graphics/AbstractShape.hpp
+        Graphics/BorderRect.cpp
+        Graphics/BorderRect.hpp
         Graphics/Camera.cpp
         Graphics/Camera.hpp
         Graphics/Circle.cpp
         Graphics/Circle.hpp
+        Graphics/ColorRect.cpp
+        Graphics/ColorRect.hpp
+        Graphics/ConvexShape.cpp
+        Graphics/ConvexShape.hpp
         Graphics/Cube.cpp
         Graphics/Cube.hpp
+        Graphics/Font.cpp
+        Graphics/Font.hpp
         Graphics/gen_purpose_testing.cpp
         Graphics/GLCall.cpp
         Graphics/GLCall.hpp
         Graphics/IBuffer.cpp
         Graphics/IBuffer.hpp
+        Graphics/Keycodes.hpp
+        Graphics/Line.cpp
+        Graphics/Line.hpp
+        Graphics/mat2.cpp
+        Graphics/mat2.hpp
         Graphics/mat4.cpp
         Graphics/mat4.hpp
         Graphics/Mesh.cpp
@@ -45,6 +67,8 @@ add_library(venus
         Graphics/Sprite.hpp
         Graphics/Tex2d.cpp
         Graphics/Tex2d.hpp
+        Graphics/Text.cpp
+        Graphics/Text.hpp
         Graphics/VArray.cpp
         Graphics/VArray.hpp
         Graphics/VAttributes.cpp
@@ -58,36 +82,17 @@ add_library(venus
         Graphics/Window.cpp
         Graphics/Window.hpp
         Graphics.hpp
-        Graphics/AbstractShape.cpp
-        Graphics/AbstractShape.hpp
-        Graphics/ConvexShape.cpp
-        Graphics/ConvexShape.hpp
         /home/caleb/Github/imgui/backends/imgui_impl_opengl3.cpp
         /home/caleb/Github/imgui/backends/imgui_impl_glfw.cpp
         /home/caleb/Github/imgui/imgui.cpp
         /home/caleb/Github/imgui/imgui_demo.cpp
         /home/caleb/Github/imgui/imgui_draw.cpp
         /home/caleb/Github/imgui/imgui_widgets.cpp
+        ImGui.hpp
+        ImGui/ImGui.hpp
+        ImGui/ImGui.cpp
+        System.hpp
+        System/Functions.hpp
         vendor/stb_image/stb_image.cpp
         vendor/stb_image/stb_image.h
-        Graphics/Keycodes.hpp
-        Game/Collider.cpp
-        Game/Collider.hpp
-        Graphics/mat2.cpp
-        Graphics/mat2.hpp
-        System/Functions.hpp
-        Game.hpp
-        System.hpp
-        Graphics/ColorRect.cpp
-        Graphics/ColorRect.hpp
-        Game/DeltaTime.cpp
-        Game/DeltaTime.hpp
-        Game/InputWatcher.cpp
-        Game/InputWatcher.hpp
-        ImGui.hpp
-        ImGui/ImGui.cpp
-        ImGui/ImGui.hpp
-        Graphics/Text.cpp
-        Graphics/Text.hpp
-        Graphics/Font.cpp
-        Graphics/Font.hpp)
+        )

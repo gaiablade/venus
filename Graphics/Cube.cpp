@@ -38,7 +38,7 @@ namespace vn {
         this->ibuffer.Bind();
     }
 
-    mat4<float> Cube::getModelView() const {
+    mat4<float> Cube::getModel() const {
         mat4<float> transformation = mat4<float>::rotate3d(this->rotation) * mat4<float>::scale3d(this->scale) * mat4<float>::translate3d(this->position);
         return transformation;
     }

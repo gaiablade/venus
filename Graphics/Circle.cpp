@@ -53,7 +53,7 @@ namespace vn {
         return this->indices;
     }
 
-    mat4<float> Circle::getModelView() const {
+    mat4<float> Circle::getModel() const {
         mat4<float> scaleMatrix = mat4<float>::scale2d(this->scale);
         mat4<float> rotationMatrix = mat4<float>::rotate2d(this->angle);
         mat4<float> translationMatrix = mat4<float>::translate2d(this->position);

@@ -15,8 +15,8 @@ namespace vn {
     class Model {
     public:
         Model(const std::string &filename);
-        mat4<float> getModelView() const;
-        glm::mat4 getModelView_glm() const;
+        mat4<float> getModel() const;
+        glm::mat4 getModel_glm() const;
     //private:
         // properties:
         vec3<float> position{ 0.f, 0.f, 0.f };

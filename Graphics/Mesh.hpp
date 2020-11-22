@@ -24,6 +24,8 @@ namespace vn {
         std::vector<std::uint32_t> getIndices() const;
         void printVertices() const;
         void printIndices() const;
+        [[nodiscard]] int getOpenGLDrawMode() const { return ogl_DrawMode; }
+        void setOpenGLDrawMode(int mode) { this->ogl_DrawMode = mode; }
 
         std::vector<Vertex>        vertices;
         std::vector<std::uint32_t> indices;
@@ -34,6 +36,7 @@ namespace vn {
         IBuffer ibuffer;
         VAttributes attributes;
         VArray  varray;
+        int ogl_DrawMode = GL_TRIANGLES;
     };
 }
 

@@ -10,9 +10,11 @@ namespace vn {
     class AbstractShape {
     public:
         AbstractShape(const std::array<Vertex, numVertices>& vertices, const std::array<uint32_t, numIndices>& indices);
-        mat4f getModelView() const;
+        mat4f getModel() const;
         std::array<uint32_t, numIndices> getIndices() const;
         void Bind() const;
+        [[nodiscard]] int getOpenGLDrawMode() const { return ogl_DrawMode; }
+        void setOpenGLDrawMode(int mode) { this->ogl_DrawMode = mode; }
     private:
         std::array<Vertex, numVertices> vertices;
         std::array<uint32_t, numIndices> indices;
@@ -20,6 +22,7 @@ namespace vn {
         IBuffer ibuffer;
         VArray varray;
         VAttributes attributes;
+        int ogl_DrawMode = GL_TRIANGLES;
     };
 
     template <class Vertex, size_t numVertices, size_t numIndices>
@@ -34,7 +37,7 @@ namespace vn {
     }
 
     template <class Vertex, size_t numVertices, size_t numIndices>
-    mat4f AbstractShape<Vertex, numVertices, numIndices>::getModelView() const {
+    mat4f AbstractShape<Vertex, numVertices, numIndices>::getModel() const {
         mat4f matrix = mat4f::identity();
         return matrix;
     }

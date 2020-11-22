@@ -13,12 +13,12 @@ namespace vn {
         this->processNode(scene->mRootNode, scene);
     }
 
-    mat4<float> Model::getModelView() const {
+    mat4<float> Model::getModel() const {
         mat4<float> transformation = mat4<float>::rotate3d(this->rotation) * mat4<float>::scale3d(this->scale) * mat4<float>::translate3d(this->position);
         return transformation;
     }
 
-    glm::mat4 Model::getModelView_glm() const {
+    glm::mat4 Model::getModel_glm() const {
         glm::mat4 m_ModelView(1.f);
         m_ModelView = glm::scale(m_ModelView, { scale.x, scale.y, scale.z });
         m_ModelView = glm::translate(m_ModelView, { position.x, position.y, position.z });

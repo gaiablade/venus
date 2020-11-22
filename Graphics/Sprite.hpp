@@ -11,6 +11,15 @@
 
 namespace vn {
     class Sprite {
+        struct v {
+            vec2f dimensions;
+            vec2f texCoords;
+
+            v() = default;
+            v(vec2f dimensions, vec2f texCoords) : dimensions(dimensions), texCoords(texCoords)
+            {
+            }
+        };
     public:
         Sprite(Tex2d& texture);
 
@@ -22,7 +31,7 @@ namespace vn {
 
         std::array<uint32_t, 6> getIndices() const;
 
-        mat4<float> getModelView() const;
+        mat4<float> getModel() const;
 
         // Set functions:
         void setPosition(const vec2<float> &p);
@@ -33,6 +42,8 @@ namespace vn {
 
         void setScale(const vec2<float> &s);
 
+        void setSize(const vn::vec2f& size);
+
         void setTexRectangle(float l, float t, float w, float h);
 
         // Get functions:
@@ -40,11 +51,15 @@ namespace vn {
 
         vec2f getScaledDimensions() const;
 
-        vec2<float> getPosition() const;
+        vec2f getPosition() const;
 
         vec2f getScale() const;
 
         void setFlipped(bool flipped);
+
+        [[nodiscard]] int getOpenGLDrawMode() const { return ogl_DrawMode; }
+
+        void setOpenGLDrawMode(int mode) { this->ogl_DrawMode = mode; }
 
     private:
         // properties
@@ -58,12 +73,14 @@ namespace vn {
 
         // opengl stuff
         std::array<uint32_t, 6> indices;
-        std::array<float, 16> buffer;
+        //std::array<float, 16> buffer;
+        std::array<v, 4> buffer;
         VBuffer vbuffer;
         IBuffer ibuffer;
         VAttributes attributes;
         VArray varray;
         Tex2d* texture{};
+        int ogl_DrawMode = GL_TRIANGLES;
     };
 }
 

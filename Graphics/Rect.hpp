@@ -19,7 +19,7 @@ namespace vn {
 
         std::array<uint32_t, 6> getIndices() const;
 
-        mat4<float> getModelView() const;
+        mat4<float> getModel() const;
 
         // Set functions:
         void setPosition(const vec2<float> &p);
@@ -30,6 +30,10 @@ namespace vn {
 
         // Get functions:
         vec2<float>& getDimensions();
+
+        [[nodiscard]] int getOpenGLDrawMode() const { return ogl_DrawMode; }
+
+        void setOpenGLDrawMode(int mode) { this->ogl_DrawMode = mode; }
 
     protected:
         // properties
@@ -47,5 +51,6 @@ namespace vn {
         IBuffer ibuffer;
         VAttributes attributes;
         VArray varray;
+        int ogl_DrawMode = GL_TRIANGLES;
     };
 }

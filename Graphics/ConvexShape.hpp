@@ -15,11 +15,15 @@ namespace vn {
 
         int calculateIndices();
 
-        [[nodiscard]] vn::mat4f getModelView() const;
+        [[nodiscard]] vn::mat4f getModel() const;
 
         std::array<uint32_t, 3 * (numVertices - 2)> getIndices() const;
 
         void Bind() const;
+
+        [[nodiscard]] int getOpenGLDrawMode() const { return ogl_DrawMode; }
+
+        void setOpenGLDrawMode(int mode) { this->ogl_DrawMode = mode; }
 
     private:
         std::array<Vertex, numVertices> vertices;
@@ -30,6 +34,7 @@ namespace vn {
         vn::IBuffer ibuffer;
         vn::VArray varray;
         vn::VAttributes attributes;
+        int ogl_DrawMode = GL_TRIANGLES;
     };
 
     template<class Vertex, size_t numVertices>
@@ -57,7 +62,7 @@ namespace vn {
     }
 
     template<class Vertex, size_t numVertices>
-    vn::mat4f ConvexShape<Vertex, numVertices>::getModelView() const {
+    vn::mat4f ConvexShape<Vertex, numVertices>::getModel() const {
         vn::mat4f matrix = vn::mat4f::identity();
         return matrix;
     }

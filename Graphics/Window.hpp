@@ -16,6 +16,7 @@
 #include "vec4.hpp"
 #include "Keycodes.hpp"
 #include "Text.hpp"
+#include "Line.hpp"
 
 namespace fs = std::filesystem;
 
@@ -78,35 +79,44 @@ namespace vn {
 
     template <typename Drawable>
     void Window::Draw(const Drawable& object) {
-        mat4<float> u_MVP = object.getModelView() * this->camera.getProjection();
+        mat4f u_MVP = object.getModel() * this->camera.getView() * this->camera.getProjection();
         this->shaders[s_CurrentShader].UniformMat4("u_MVP", u_MVP);
-        this->renderer.Draw(object);
+        Renderer::Draw(object, object.getOpenGLDrawMode());
     }
 
     template <typename Drawable>
     void Window::Draw(const Drawable& object, vn::Camera& camera) {
-        mat4<float> u_MVP = object.getModelView() * camera.getProjection();
+        mat4f u_MVP = object.getModel() * camera.getView() * camera.getProjection();
         this->shaders[s_CurrentShader].UniformMat4("u_MVP", u_MVP);
-        this->renderer.Draw(object);
+        Renderer::Draw(object, object.getOpenGLDrawMode());
     }
 
     template <> inline
     void Window::Draw<Model>(const Model& object) {
-        mat4<float> u_MVP = object.getModelView() * this->camera.getProjection();
-        mat4f u_Model = object.getModelView();
+        mat4f u_MVP = object.getModel() * this->camera.getView() * this->camera.getProjection();
+        mat4f u_Model = object.getModel();
         this->shaders[s_CurrentShader].UniformMat4("u_MVP", u_MVP);
         this->shaders[s_CurrentShader].UniformMat4("u_Model", u_Model);
         for (auto& mesh : object.meshes) {
-            this->renderer.Draw(mesh);
+            Renderer::Draw(mesh, mesh.getOpenGLDrawMode());
         }
     }
 
     template <> inline
     void Window::Draw<Text>(const Text& object) {
-        mat4<float> u_MVP = object.getModelView() * this->camera.getProjection();
+        mat4f u_MVP = object.getModel() * this->camera.getView() * this->camera.getProjection();
         this->shaders[s_CurrentShader].UniformMat4("u_MVP", u_MVP);
         this->shaders[s_CurrentShader].UniformVec4f("u_TextColor", object.getColor());
-        this->renderer.Draw(object);
+        Renderer::Draw(object, object.getOpenGLDrawMode());
+    }
+
+    template<> inline
+    void Window::Draw<Line>(const Line& object) {
+        mat4f u_MVP = object.getModel() * this->camera.getView() * this->camera.getProjection();
+        this->shaders[s_CurrentShader].UniformMat4("u_MVP", u_MVP);
+        GLCall(glLineWidth(object.getLineWidth()));
+        Renderer::Draw(object, object.getOpenGLDrawMode());
+        GLCall(glLineWidth(1.0f));
     }
 }
 

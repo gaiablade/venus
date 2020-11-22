@@ -1,11 +1,13 @@
 #pragma once
 
+#include "Graphics/BorderRect.hpp"
 #include "Graphics/Camera.hpp"
 #include "Graphics/Circle.hpp"
 #include "Graphics/ColorRect.hpp"
 #include "Graphics/Cube.hpp"
 #include "Graphics/GLCall.hpp"
 #include "Graphics/IBuffer.hpp"
+#include "Graphics/Line.hpp"
 #include "Graphics/mat4.hpp"
 #include "Graphics/Mesh.hpp"
 #include "Graphics/Model.hpp"
@@ -18,6 +20,7 @@
 #include "Graphics/Shader.hpp"
 #include "Graphics/Sprite.hpp"
 #include "Graphics/Tex2d.hpp"
+#include "Graphics/Text.hpp"
 #include "Graphics/VArray.hpp"
 #include "Graphics/VAttributes.hpp"
 #include "Graphics/VBuffer.hpp"
@@ -25,4 +28,3 @@
 #include "Graphics/vec3.hpp"
 #include "Graphics/vec4.hpp"
 #include "Graphics/Window.hpp"
-#include "Graphics/Text.hpp"

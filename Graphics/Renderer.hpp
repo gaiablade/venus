@@ -9,15 +9,15 @@ namespace vn {
     class Renderer {
     public:
         template<typename Drawable>
-        static void Draw(const Drawable &object);
+        static void Draw(const Drawable &object, int mode = GL_TRIANGLES);
 
     private:
     };
 
     template<typename Drawable>
-    void Renderer::Draw(const Drawable &object) {
+    void Renderer::Draw(const Drawable &object, int mode) {
         object.Bind();
-        GLCall(glDrawElements(GL_TRIANGLES, object.getIndices().size(), GL_UNSIGNED_INT, (const void *) nullptr));
+        GLCall(glDrawElements(mode, object.getIndices().size(), GL_UNSIGNED_INT, (const void *) nullptr));
     }
 }
 

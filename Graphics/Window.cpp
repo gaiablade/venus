@@ -136,8 +136,10 @@ namespace vn {
     }
 
     vec2<uint32_t> Window::center() {
+        int width, height;
+        glfwGetWindowSize(this->w, &width, &height);
         return {
-                this->attributes.width / 2, this->attributes.height / 2
+            vec2u(width/2, height/2)
         };
     }
 

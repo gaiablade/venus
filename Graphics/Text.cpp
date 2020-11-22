@@ -29,7 +29,7 @@ namespace vn {
         this->ibuffer.Bind();
     }
 
-    mat4f Text::getModelView() const {
+    mat4f Text::getModel() const {
         return mat4f::translate2d(this->position);
     }
 
@@ -43,6 +43,10 @@ namespace vn {
 
     vec2f Text::getDimensions() const {
         return this->dimensions;
+    }
+
+    void Text::setPosition(const vec2f &position) {
+        this->position = position;
     }
 
     void Text::setText(const std::string &str) {
@@ -220,5 +224,9 @@ namespace vn {
 
     void Text::setTextColor(const vn::vec4f& color) {
         this->color = color;
+    }
+
+    vec2f Text::getPosition() const {
+        return position;
     }
 }

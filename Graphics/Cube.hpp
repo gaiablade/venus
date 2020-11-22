@@ -13,9 +13,11 @@ namespace vn {
     public:
         Cube(float size);
         void Bind() const;
-        mat4<float> getModelView() const;
+        mat4<float> getModel() const;
         std::vector<std::uint32_t> getIndices() const;
         void printVertices() const;
+        [[nodiscard]] int getOpenGLDrawMode() const { return ogl_DrawMode; }
+        void setOpenGLDrawMode(int mode) { this->ogl_DrawMode = mode; }
 
         // things
         std::vector<float> vertices;
@@ -29,6 +31,7 @@ namespace vn {
         IBuffer ibuffer;
         VAttributes attributes;
         VArray varray;
+        int ogl_DrawMode = GL_TRIANGLES;
     };
 }
 

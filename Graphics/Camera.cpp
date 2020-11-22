@@ -1,8 +1,12 @@
 #include "Camera.hpp"
 
 namespace vn {
-    mat4<float> &Camera::getProjection() {
+    mat4f &Camera::getProjection() {
         return this->projection_matrix;
+    }
+
+    mat4f &Camera::getView() {
+        return view_matrix;
     }
 
     glm::mat4 Camera::getProjection_glm() {
