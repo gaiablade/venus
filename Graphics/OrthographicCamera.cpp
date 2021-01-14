@@ -12,7 +12,8 @@ namespace vn {
     void OrthographicCamera::setPosition(vn::vec2f m_position) {
         // clipCoordinates = (left, top, right, bottom)
         vec2f clippedPosition = m_position;
-        if (b_CheckClip) {
+        // If clipping has been enabled and the set view's dimensions fit within the clip dimensions, clip the view into the boundaries:
+        if (b_CheckClip && transformedParams.width <= v_ClipCoordinates.z - v_ClipCoordinates.x && transformedParams.height <= v_ClipCoordinates.w - v_ClipCoordinates.y) {
             if (clippedPosition.x - (transformedParams.width / 2) < v_ClipCoordinates.x) {
                 clippedPosition.x = v_ClipCoordinates.x + (transformedParams.width / 2);
             } else if (clippedPosition.x + (transformedParams.width / 2) > v_ClipCoordinates.z) {

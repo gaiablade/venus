@@ -2,6 +2,7 @@
 
 namespace vn {
     Orthographic3dCamera::Orthographic3dCamera(const orthoData &params) {
-        this->projection_matrix = mat4<float>::ortho3d(params);
+        this->projection_matrix = mat4f::ortho3d(params);
+        this->view_matrix = mat4f::identity();
     }
 }

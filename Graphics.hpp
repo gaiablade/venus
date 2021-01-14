@@ -15,6 +15,7 @@
 #include "Graphics/Orthographic3dCamera.hpp"
 #include "Graphics/OrthographicCamera.hpp"
 #include "Graphics/Perspective3dCamera.hpp"
+#include "Graphics/Plane.hpp"
 #include "Graphics/Rect.hpp"
 #include "Graphics/Renderer.hpp"
 #include "Graphics/Shader.hpp"

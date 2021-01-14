@@ -15,6 +15,13 @@ namespace vn {
         vec3<float> position;
         vec3<float> normal;
         vec2<float> tex_coords;
+
+        Vertex() = default;
+
+        Vertex(vec3f position, vec3f normal, vec2f tc) :
+        position(position), normal(normal), tex_coords(tc)
+        {
+        }
     };
 
     class Mesh {

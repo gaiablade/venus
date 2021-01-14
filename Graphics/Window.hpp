@@ -17,6 +17,7 @@
 #include "Keycodes.hpp"
 #include "Text.hpp"
 #include "Line.hpp"
+#include "Plane.hpp"
 
 namespace fs = std::filesystem;
 
@@ -91,6 +92,17 @@ namespace vn {
         Renderer::Draw(object, object.getOpenGLDrawMode());
     }
 
+    template<> inline
+    void Window::Draw<Model>(const Model& object, vn::Camera& camera) {
+        mat4f u_MVP = object.getModel() * camera.getView() * camera.getProjection();
+        mat4f u_Model = object.getModel();
+        this->shaders[s_CurrentShader].UniformMat4("u_MVP", u_MVP);
+        this->shaders[s_CurrentShader].UniformMat4("u_Model", u_Model);
+        for (auto& mesh : object.meshes) {
+            Renderer::Draw(mesh, mesh.getOpenGLDrawMode());
+        }
+    }
+
     template <> inline
     void Window::Draw<Model>(const Model& object) {
         mat4f u_MVP = object.getModel() * this->camera.getView() * this->camera.getProjection();
@@ -100,6 +112,15 @@ namespace vn {
         for (auto& mesh : object.meshes) {
             Renderer::Draw(mesh, mesh.getOpenGLDrawMode());
         }
+    }
+
+    template <> inline
+    void Window::Draw<Plane>(const Plane& object) {
+        mat4f u_MVP = object.getModel() * this->camera.getView() * this->camera.getProjection();
+        mat4f u_Model = object.getModel();
+        this->shaders[s_CurrentShader].UniformMat4("u_MVP", u_MVP);
+        this->shaders[s_CurrentShader].UniformMat4("u_Model", u_Model);
+        Renderer::Draw(object, object.getOpenGLDrawMode());
     }
 
     template <> inline

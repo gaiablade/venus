@@ -55,6 +55,8 @@ add_library(venus
         Graphics/OrthographicCamera.hpp
         Graphics/Perspective3dCamera.cpp
         Graphics/Perspective3dCamera.hpp
+        Graphics/Plane.cpp
+        Graphics/Plane.hpp
         Graphics/Rect.cpp
         Graphics/Rect.hpp
         Graphics/Renderer.cpp
